@@ -1,0 +1,34 @@
+.statBox {
+    width: 255px;
+    height: 128px;
+    border: 1px solid #FFFFFF20;
+    padding-top: 2rem;
+    padding-left: 2.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.statTitle {
+    color: #FFF;
+    font-family: Spartan, sans-serif;
+    font-size: 1.1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2.5rem;
+    /* 227.273% */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.5;
+}
+
+.statData {
+    color: #FFF;
+    font-family: Antonio, serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1.5px;
+    text-transform: uppercase;
+}

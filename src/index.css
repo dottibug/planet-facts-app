@@ -1,5 +1,72 @@
 /* https://www.joshwcomeau.com/css/custom-css-reset/ */
 
+@import url('https://fonts.googleapis.com/css2?family=Antonio&family=League+Spartan:wght@400;700&display=swap');
+
+:root {
+  /* Font Family */
+  --font-antonio: 'Antonio',
+    sans-serif;
+  --font-spartan: 'League Spartan',
+    sans-serif;
+}
+
+.body {
+  font-family: var(--font-spartan);
+  font-size: 1.4rem;
+  /* 14px */
+  font-weight: 400;
+  line-height: 25px;
+  font-style: normal;
+}
+
+.headingOne {
+  font-family: var(--font-antonio);
+  font-size: 8rem;
+  /* 80px */
+  font-weight: 400;
+  line-height: 103px;
+  text-transform: uppercase;
+}
+
+.heading-two {
+  font-family: var(--font-antonio);
+  font-size: 4rem;
+  /* 40px */
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+}
+
+.heading-three {
+  font-family: var(--font-spartan);
+  font-size: 1.2rem;
+  /* 12px */
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: 2.6px;
+  text-transform: uppercase;
+}
+
+.heading-four {
+  font-family: var(--font-spartan);
+  font-size: 1.1rem;
+  /* 11px */
+  font-weight: 700;
+  list-style: 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.button-text {
+  font-family: var(--font-spartan);
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: 2.571px;
+  text-transform: uppercase;
+}
+
 /* Box Sizing */
 *,
 *::before,
@@ -19,6 +86,8 @@ html,
 body,
 #__next {
   height: 100%;
+  background-color: #070724;
+  color: white;
 }
 
 /* Typography */
