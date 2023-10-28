@@ -1,0 +1,65 @@
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+
+/* Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Margin & Padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Allow %-based height (#__ root level element for React framework */
+/* 100vh doesn't work properly on browsers. So allowing %-based height is currently more ideal for mobile styling */
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+/* Typography */
+html {
+  font-size: 62.5%;
+}
+
+/* WCAG recommends line-height of at least 1.5 on body text. Reduce for large headings, though */
+/* Turn off subpixel antialiasing on Chrome and Safari browsers for Mac to create smoother text */
+body {
+  font-family: var(--font-body), sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Remove user-agent typography styles */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Avoid text overflow */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
