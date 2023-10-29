@@ -1,29 +1,12 @@
 import styles from './Layout.module.css';
-import { Outlet, useParams } from 'react-router-dom';
-import { planetData } from '../data/data';
-import Footer from './components/Footer';
+import { Outlet } from 'react-router-dom';
 import Nav from './components/Nav';
 
 export default function Layout() {
-  // const { planet } = useParams();
-
-  // NOTE temp getting data from object, but will be fetched from supabase
-  // const currentPlanet = planetData.find((data) => data.name.toLowerCase() === planet);
-
-  // const { rotation, revolution, radius, temperature } = currentPlanet;
-
-  // const planetStats = [
-  //   { title: 'Rotation Time', data: rotation },
-  //   { title: 'Revolution Time', data: revolution },
-  //   { title: 'Radius', data: radius },
-  //   { title: 'Average Temp.', data: temperature },
-  // ];
-
   return (
-    <>
+    <main className={styles.layout}>
       <Nav />
       <Outlet />
-      {/* <Footer planetStats={planetStats} /> */}
-    </>
+    </main>
   );
 }
