@@ -1,0 +1,15 @@
+.planetImage {
+    width: 290px;
+    height: 290px;
+    grid-area: image;
+    position: relative;
+}
+
+.surface {
+    width: 163px;
+    height: 199px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -120px;
+}

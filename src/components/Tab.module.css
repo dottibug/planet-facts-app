@@ -1,0 +1,46 @@
+.tab {
+    width: 350px;
+    height: 48px;
+    border: 1px solid #FFFFFF20;
+    padding-left: 28px;
+    padding-top: 12px;
+    padding-bottom: 11px;
+    display: inline-flex;
+    gap: 1rem;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.active {
+    cursor: default;
+}
+
+.tab:not(.active):hover {
+    cursor: pointer;
+    background-color: #D8D8D820;
+    border-color: transparent;
+}
+
+.tabNum {
+    color: #FFFFFF50;
+    font-family: var(--font-spartan);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px;
+    /* 208.333% */
+    letter-spacing: 2.571px;
+    text-transform: uppercase;
+}
+
+.tabName {
+    color: #FFF;
+    font-family: var(--font-spartan);
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px;
+    /* 208.333% */
+    letter-spacing: 2.571px;
+    text-transform: uppercase;
+}

@@ -1,0 +1,27 @@
+.planetFacts {
+    grid-area: facts;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.source {
+    opacity: 0.5;
+    display: flex;
+    gap: 0.8rem;
+}
+
+.link {
+    color: #FFF;
+    font-weight: 700;
+    text-decoration-line: underline;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.linkIcon {
+    width: 12px;
+    height: 12px;
+}
