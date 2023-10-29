@@ -1,9 +1,7 @@
 import styles from './PlanetImage.module.css';
 import { planetImageSizes } from '../../data/mediaSizes';
 
-export default function PlanetImage({ planet, info }) {
-  const { name, images } = planet;
-
+export default function PlanetImage({ name, images, info }) {
   const planetImage = () => {
     if (info === 'overview') return images.planet;
     if (info === 'internal-structure') return images.internal;
@@ -14,13 +12,7 @@ export default function PlanetImage({ planet, info }) {
   const imageSize = planetImageSizes[name.toLowerCase()].desktop;
 
   return (
-    <div
-      className={styles.planetImageWrapper}
-      // style={{
-      //   width: imageSize,
-      //   height: imageSize,
-      // }}
-    >
+    <div className={styles.planetImageWrapper}>
       <img
         className={styles.planetImage}
         src={planetImage()}

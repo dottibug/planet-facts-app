@@ -1,10 +1,10 @@
-import styles from './Footer.module.css';
+import styles from './PlanetStats.module.css';
 import PlanetStat from './PlanetStat';
 
 // title
 // data
 
-export default function Footer({ planetStats }) {
+export default function PlanetStats({ planetStats }) {
   return (
     <footer className={styles.footer}>
       {planetStats.map((planetStat) => (

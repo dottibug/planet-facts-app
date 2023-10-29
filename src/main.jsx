@@ -6,6 +6,7 @@ import './index.css';
 import ErrorPage from './pages/ErrorPage';
 import Layout from './Layout';
 import Planet from './routes/Planet';
+import { planetData } from '../data/data';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,12 @@ const router = createBrowserRouter([
       {
         path: '/:planet',
         element: <Planet />,
+        loader: async ({ params: { planet } }) => {
+          const currentPlanet = planetData.find(
+            (data) => data.name.toLowerCase() === planet
+          );
+          return currentPlanet || null;
+        },
         children: [
           // PLANET INFO TAB
           {

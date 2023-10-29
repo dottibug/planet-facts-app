@@ -1,32 +1,28 @@
 import styles from './Planet.module.css';
 import { useParams, useLoaderData } from 'react-router-dom';
-import { planetData } from '../../data/data';
 import PlanetImage from '../components/PlanetImage';
 import PlanetFacts from '../components/PlanetFacts';
-import Footer from '../components/Footer';
+import PlanetStats from '../components/PlanetStats';
 
 export default function Planet() {
-  const { planet, info } = useParams();
-  const params = useParams();
-
-  console.log('params: ', params);
-
-  const currentPlanet = planetData.find((data) => data.name.toLowerCase() === planet);
+  const info = useParams().info || 'overview';
+  const currentPlanet = useLoaderData();
+  const { rotation, revolution, radius, temperature, name, images } = currentPlanet;
 
   const planetStats = [
-    { title: 'rotation', data: currentPlanet.rotation },
-    { title: 'revolution', data: currentPlanet.revolution },
-    { title: 'radius', data: currentPlanet.radius },
-    { title: 'temperature', data: currentPlanet.temperature },
+    { title: 'rotation', data: rotation },
+    { title: 'revolution', data: revolution },
+    { title: 'radius', data: radius },
+    { title: 'temperature', data: temperature },
   ];
 
   return (
     <>
       <div className={styles.planet}>
-        <PlanetImage planet={currentPlanet} info={info || 'overview'} />
-        <PlanetFacts planet={currentPlanet} info={info || 'overview'} />
+        <PlanetImage name={name} images={images} info={info} />
+        <PlanetFacts planet={currentPlanet} name={name} info={info} />
       </div>
-      <Footer planetStats={planetStats} />
+      <PlanetStats planetStats={planetStats} />
     </>
   );
 }

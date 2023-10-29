@@ -20,10 +20,8 @@ export default function Tab({ tab, index }) {
   const tabSlug = tab.toLowerCase().split(' ').join('-');
 
   //   isActive comes from React Router NavLink component, which gives us the state of the link (active, pending, etc)
-  const tabClasses = (isActive) => {
-    console.log('is active: ', isActive);
-    return isActive ? `${styles.tab} ${styles.active}` : styles.tab;
-  };
+  const tabClasses = (isActive) =>
+    isActive ? `${styles.tab} ${styles.active}` : styles.tab;
 
   const tabStyle = (isActive) => {
     if (!isActive) return {};
