@@ -21,6 +21,7 @@ export default function Tab({ tab, index }) {
 
   //   isActive comes from React Router NavLink component, which gives us the state of the link (active, pending, etc)
   const tabClasses = (isActive) => {
+    console.log('is active: ', isActive);
     return isActive ? `${styles.tab} ${styles.active}` : styles.tab;
   };
 
@@ -31,9 +32,10 @@ export default function Tab({ tab, index }) {
 
   return (
     <NavLink
-      to={`${tabSlug}`}
+      to={tabSlug === 'overview' ? `/${planet}` : tabSlug}
       className={({ isActive }) => tabClasses(isActive)}
-      style={({ isActive }) => tabStyle(isActive)}>
+      style={({ isActive }) => tabStyle(isActive)}
+      end>
       <span className={styles.tabNum}>{tabNumber}</span>
       <span className={styles.tabName}>{tab}</span>
     </NavLink>

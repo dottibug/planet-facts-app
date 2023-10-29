@@ -21,7 +21,6 @@ const router = createBrowserRouter([
       {
         path: '/:planet',
         element: <Planet />,
-        loader: async () => 'overview',
         children: [
           // PLANET INFO TAB
           {

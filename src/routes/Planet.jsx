@@ -1,5 +1,5 @@
 import styles from './Planet.module.css';
-import { useParams } from 'react-router-dom';
+import { useParams, useLoaderData } from 'react-router-dom';
 import { planetData } from '../../data/data';
 import PlanetImage from '../components/PlanetImage';
 import PlanetFacts from '../components/PlanetFacts';
@@ -7,6 +7,9 @@ import Footer from '../components/Footer';
 
 export default function Planet() {
   const { planet, info } = useParams();
+  const params = useParams();
+
+  console.log('params: ', params);
 
   const currentPlanet = planetData.find((data) => data.name.toLowerCase() === planet);
 

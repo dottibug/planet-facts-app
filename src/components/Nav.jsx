@@ -38,7 +38,7 @@ export default function Nav() {
       <ul className={styles.navItems}>
         {planets.map((planet) => (
           <NavLink
-            to={`${planet}/overview`}
+            to={`/${planet}`}
             className={styles.navItem}
             style={({ isActive }) => navItemStyle(isActive, planet)}
             key={planet}>
