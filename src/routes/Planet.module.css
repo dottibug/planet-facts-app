@@ -1,6 +1,6 @@
 .planet {
+    margin-top: 84px;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr auto;
     grid-template-areas: 'image facts';
-    padding: 0 18rem;
 }

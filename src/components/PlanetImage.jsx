@@ -1,4 +1,5 @@
 import styles from './PlanetImage.module.css';
+import { planetImageSizes } from '../../data/mediaSizes';
 
 export default function PlanetImage({ planet, info }) {
   const { name, images } = planet;
@@ -9,9 +10,26 @@ export default function PlanetImage({ planet, info }) {
     if (info === 'surface-geology') return images.planet;
   };
 
+  // TODO responsive planet image sizes
+  const imageSize = planetImageSizes[name.toLowerCase()].desktop;
+
   return (
-    <div className={styles.planetImage}>
-      <img src={planetImage()} alt={getImageAlt(name, info)} />
+    <div
+      className={styles.planetImageWrapper}
+      // style={{
+      //   width: imageSize,
+      //   height: imageSize,
+      // }}
+    >
+      <img
+        className={styles.planetImage}
+        src={planetImage()}
+        alt={getImageAlt(name, info)}
+        style={{
+          width: imageSize,
+          height: imageSize,
+        }}
+      />
       {info === 'surface-geology' && (
         <img
           className={styles.surface}

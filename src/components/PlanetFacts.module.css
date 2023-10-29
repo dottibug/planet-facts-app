@@ -5,6 +5,7 @@
     flex-direction: column;
     gap: 3rem;
     height: 544px;
+    /* margin-top: 126px; */
 }
 
 .planetInfo {
