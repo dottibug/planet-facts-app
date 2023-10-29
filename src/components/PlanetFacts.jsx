@@ -19,7 +19,7 @@ export default function PlanetFacts({ planet, info }) {
   return (
     <div className={styles.planetFacts}>
       <h1 className="headingOne">{name}</h1>
-      <p className="body">{planetInfo()}</p>
+      <p className={`${styles.planetInfo} body`}>{planetInfo()}</p>
 
       <div className={styles.source}>
         <p className="body">{`Source:  `}</p>
