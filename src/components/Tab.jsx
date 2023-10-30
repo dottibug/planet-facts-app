@@ -1,17 +1,7 @@
 import styles from './Tab.module.css';
 import { useParams } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
-
-const planetColors = {
-  mercury: '#419EBB',
-  venus: '#EDA249',
-  earth: '#6D2ED5',
-  mars: '#D14C32',
-  jupiter: '#D83A34',
-  saturn: '#CD5120',
-  uranus: '#1EC1A2',
-  neptune: '#2D68F0',
-};
+import { planetColors } from '../../data/planetColors';
 
 export default function Tab({ tab, index }) {
   const { planet } = useParams();
