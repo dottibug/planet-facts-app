@@ -34,8 +34,8 @@ export default function Tab({ tab, index }) {
       className={({ isActive }) => tabClasses(isActive)}
       style={({ isActive }) => tabStyle(isActive)}
       end>
-      <span className={styles.tabNum}>{tabNumber}</span>
-      <span className={styles.tabName}>{tab}</span>
+      <span className={`headingThree ${styles.tabNum}`}>{tabNumber}</span>
+      <span className={`headingThree ${styles.tabName}`}>{tab}</span>
     </NavLink>
   );
 }

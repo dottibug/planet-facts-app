@@ -23,24 +23,8 @@
 
 .tabNum {
     color: #FFFFFF50;
-    font-family: var(--font-spartan);
-    font-size: 1.4rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 25px;
-    /* 208.333% */
-    letter-spacing: 2.571px;
-    text-transform: uppercase;
 }
 
 .tabName {
-    color: #FFF;
-    font-family: var(--font-spartan);
-    font-size: 1.4rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 25px;
-    /* 208.333% */
-    letter-spacing: 2.571px;
-    text-transform: uppercase;
+    color: #fff;
 }

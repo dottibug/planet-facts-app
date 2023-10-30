@@ -1,4 +1,6 @@
 import { NavLink } from 'react-router-dom';
+import { useMediaContext } from '../context/useMediaContext';
+import { DESKTOP, TABLET, MOBILE } from '../context/mediaContext';
 import styles from './Nav.module.css';
 
 const planets = [
@@ -24,12 +26,23 @@ const planetColors = {
 };
 
 export default function Nav() {
+  const media = useMediaContext();
+
+  // TODO the nav menu that is rendered depends on the media size
+
   const navItemStyle = (isActive, planet) => {
     if (!isActive) return {};
-    return {
+
+    const desktopStyles = {
       borderTopColor: planetColors[planet],
       backgroundColor: `${planetColors[planet]}20`,
     };
+
+    const mobileAndTabletStyles = {
+      borderBottomColor: planetColors[planet],
+    };
+
+    return media === DESKTOP ? desktopStyles : mobileAndTabletStyles;
   };
 
   return (

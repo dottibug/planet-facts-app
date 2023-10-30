@@ -7,6 +7,7 @@ import ErrorPage from './pages/ErrorPage';
 import Layout from './Layout';
 import Planet from './routes/Planet';
 import { planetData } from '../data/data';
+import MediaProvider from './context/mediaContext';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} future={{ v7_startTransition: true }} />
+    <MediaProvider>
+      <RouterProvider router={router} future={{ v7_startTransition: true }} />
+    </MediaProvider>
   </React.StrictMode>
 );

@@ -39,6 +39,35 @@
     height: inherit;
     display: flex;
     align-items: center;
-    border-top: 4px solid transparent;
     padding: 0 1rem;
+}
+
+/* RESPONSIVE */
+/* Desktop */
+@media screen and (min-width: 1280px) {
+    .navItem {
+        border-top: 4px solid transparent;
+    }
+}
+
+/* Tablet */
+@media screen and (max-width: 1279px) and (min-width: 912px) {
+    .navBar {
+        flex-direction: column;
+        height: 159px;
+        gap: 3.9rem;
+        padding: 0 5.2rem;
+        padding-top: 3.2rem;
+        padding-bottom: 2.7rem;
+    }
+
+    .navItem {
+        height: auto;
+        border-bottom: 4px solid transparent;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 911px) {
+    /*  */
 }

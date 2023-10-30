@@ -1,3 +1,7 @@
+// Desktop: 1280
+// Tablet: 912
+// Mobile: 412
+
 export const planetImageSizes = {
   mercury: {
     desktop: 290,
