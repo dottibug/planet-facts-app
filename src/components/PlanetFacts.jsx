@@ -1,7 +1,10 @@
 import styles from './PlanetFacts.module.css';
 import Tabs from './Tabs';
+import { useMediaContext } from '../context/useMediaContext';
+import { MOBILE } from '../context/mediaContext';
 
 export default function PlanetFacts({ planet, info }) {
+  const media = useMediaContext();
   const { name } = planet;
 
   const planetInfo = () => {
@@ -18,17 +21,19 @@ export default function PlanetFacts({ planet, info }) {
 
   return (
     <div className={styles.planetFacts}>
-      <h1 className="headingOne">{name}</h1>
-      <p className={`${styles.planetInfo} body`}>{planetInfo()}</p>
+      <div className={styles.summary}>
+        <h1 className="headingOne">{name}</h1>
+        <p className={`${styles.planetInfo} body`}>{planetInfo()}</p>
 
-      <div className={styles.source}>
-        <p className="body">{`Source:  `}</p>
-        <a href={infoSource()} className={`body ${styles.link}`}>
-          <p>Wikipedia</p>
-          <img className={styles.linkIcon} src="/assets/icon-source.svg" alt="test" />
-        </a>
+        <div className={styles.source}>
+          <p className="body">{`Source:  `}</p>
+          <a href={infoSource()} className={`body ${styles.link}`}>
+            <p>Wikipedia</p>
+            <img className={styles.linkIcon} src="/assets/icon-source.svg" alt="test" />
+          </a>
+        </div>
       </div>
-      <Tabs />
+      {media !== MOBILE && <Tabs />}
     </div>
   );
 }

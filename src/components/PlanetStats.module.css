@@ -6,3 +6,25 @@
     margin-top: 8.6rem;
     padding-left: 165px;
 }
+
+/* MEDIA QUERIES */
+/* Tablet */
+@media screen and (max-width: 1279px) and (min-width: 912px) {
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+        justify-content: space-between;
+        gap: 3rem;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 911px) {
+    .footer {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 2.4rem;
+        width: 100%;
+        margin-top: 4.2rem;
+    }
+}

@@ -3,9 +3,14 @@
     width: 350px;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 4rem;
     height: 544px;
-    /* margin-top: 126px; */
+}
+
+.summary {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
 }
 
 .planetInfo {
@@ -17,7 +22,6 @@
     display: flex;
     gap: 0.8rem;
 }
-
 
 .link {
     color: #FFF;
@@ -31,4 +35,50 @@
 .linkIcon {
     width: 12px;
     height: 12px;
+}
+
+/* MEDIA QUERIES */
+/* Tablet */
+@media screen and (max-width: 1279px) and (min-width: 912px) {
+    .planetFacts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        height: auto;
+        gap: 8rem;
+    }
+
+    .summary {
+        width: 100%;
+    }
+
+    .planetInfo {
+        height: 124px;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 911px) {
+    .planetFacts {
+        width: 100%;
+        height: auto;
+        margin-top: 1.5rem;
+    }
+
+    .summary {
+        align-items: center;
+        gap: 1.6rem;
+        padding: 0 2.4rem;
+    }
+
+    .planetInfo {
+        text-align: center;
+        height: fit-content;
+    }
+
+    .source {
+        margin-top: 0.5rem;
+    }
 }

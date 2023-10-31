@@ -4,8 +4,8 @@ import { planetsArray } from '../../data/planetsArray';
 import { planetColors } from '../../data/planetColors';
 import { NavLink } from 'react-router-dom';
 
-export default function MobileNav() {
-  const [isOpen, setIsOpen] = useState(false);
+export default function MobileNav({ isOpen, setIsOpen }) {
+  // const [isOpen, setIsOpen] = useState(false);
 
   // HANDLERS
   const handleClickMenuButton = () => setIsOpen((isOpen) => !isOpen);
@@ -45,14 +45,21 @@ export default function MobileNav() {
                   </svg>
                   <p className={styles.name}>{planet}</p>
                 </div>
-                <img
+                {/* <img
                   className={styles.arrow}
                   src="/assets/icon-chevron.svg"
                   alt={`Selection arrow for ${planet.at(0).toUpperCase()}${planet.slice(
                     1
                   )}`}
-                />
+                /> */}
               </NavLink>
+              <img
+                className={styles.arrow}
+                src="/assets/icon-chevron.svg"
+                alt={`Selection arrow for ${planet.at(0).toUpperCase()}${planet.slice(
+                  1
+                )}`}
+              />
             </li>
           ))}
         </ul>

@@ -1,7 +1,6 @@
 import styles from './Tabs.module.css';
 import Tab from './Tab';
-
-const tabs = ['Overview', 'Internal Structure', 'Surface Geology'];
+import { tabs } from '../../data/infoTabs';
 
 export default function Tabs() {
   return (

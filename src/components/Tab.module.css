@@ -28,3 +28,11 @@
 .tabName {
     color: #fff;
 }
+
+/* MEDIA QUERIES */
+/* Tablet */
+@media screen and (max-width: 1279px) and (min-width: 912px) {
+    .tab {
+        width: 100%;
+    }
+}

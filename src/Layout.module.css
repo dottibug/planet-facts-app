@@ -6,3 +6,17 @@
     /* padding: 0 165px; */
     padding-right: 165px;
 }
+
+/* Tablet */
+@media screen and (max-width: 1279px) and (min-width: 912px) {
+    .outlet {
+        padding: 0 5rem;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 911px) {
+    .outlet {
+        padding: 0 2.4rem;
+    }
+}

@@ -1,15 +1,38 @@
 import styles from './PlanetImage.module.css';
-import { planetImageSizes } from '../../data/mediaSizes';
+import { planetImageSizes } from '../../data/planetImageSizes';
+import { useMediaContext } from '../context/useMediaContext';
+import { DESKTOP, TABLET, MOBILE } from '../context/mediaContext';
+import { useParams } from 'react-router-dom';
 
 export default function PlanetImage({ name, images, info }) {
+  const { planet } = useParams();
+  const media = useMediaContext();
+
   const planetImage = () => {
     if (info === 'overview') return images.planet;
     if (info === 'internal-structure') return images.internal;
     if (info === 'surface-geology') return images.planet;
   };
 
-  // TODO responsive planet image sizes
-  const imageSize = planetImageSizes[name.toLowerCase()].desktop;
+  const imageSize = () => {
+    if (media === DESKTOP)
+      return {
+        width: `${planetImageSizes[planet][DESKTOP.toLowerCase()]}px`,
+        height: `${planetImageSizes[planet][DESKTOP.toLowerCase()]}px`,
+      };
+
+    if (media === TABLET)
+      return {
+        width: `${planetImageSizes[planet][TABLET.toLowerCase()]}px`,
+        height: `${planetImageSizes[planet][TABLET.toLowerCase()]}px`,
+      };
+
+    if (media === MOBILE)
+      return {
+        width: `${planetImageSizes[planet][MOBILE.toLowerCase()]}px`,
+        height: `${planetImageSizes[planet][MOBILE.toLowerCase()]}px`,
+      };
+  };
 
   return (
     <div className={styles.planetImageWrapper}>
@@ -17,10 +40,7 @@ export default function PlanetImage({ name, images, info }) {
         className={styles.planetImage}
         src={planetImage()}
         alt={getImageAlt(name, info)}
-        style={{
-          width: imageSize,
-          height: imageSize,
-        }}
+        style={imageSize()}
       />
       {info === 'surface-geology' && (
         <img

@@ -1,8 +1,9 @@
-import { createContext, useState, useEffect, useContext } from 'react';
+import { createContext, useState, useEffect } from 'react';
 
 export const MediaContext = createContext(null);
 
 const DESKTOP_SIZE = 1280;
+// TODO another size LAPTOP starting at 1062;
 const TABLET_SIZE = 912;
 const MOBILE_SIZE = 412;
 

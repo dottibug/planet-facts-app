@@ -10,14 +10,31 @@
 }
 
 .statTitle {
-    /* color: #FFF;
-    font-family: Spartan, sans-serif;
-    font-size: 1.2rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 2.5rem;
-    /* 227.273% */
-    /* letter-spacing: 1px;
-    text-transform: uppercase; */
     opacity: 0.5;
+}
+
+/* MEDIA QUERIES */
+/* Tablet */
+@media screen and (max-width: 1279px) and (min-width: 912px) {
+    .statBox {
+        /* width: 164px; */
+        height: 88px;
+        gap: 6px;
+        padding-left: 1.5rem;
+        padding-top: 1.6rem;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 911px) {
+    .statBox {
+        height: 4.8rem;
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 2.4rem;
+        padding-right: 2.4rem;
+        padding-top: 0;
+    }
 }
