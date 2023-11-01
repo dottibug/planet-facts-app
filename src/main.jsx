@@ -1,13 +1,12 @@
+import './base.scss';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
-import './index.css';
+import MediaProvider from './context/mediaContext';
+import Layout from './layout/Layout';
 import ErrorPage from './pages/ErrorPage';
-import Layout from './Layout';
 import Planet from './routes/Planet';
 import { planetData } from '../data/data';
-import MediaProvider from './context/mediaContext';
 
 const router = createBrowserRouter([
   {

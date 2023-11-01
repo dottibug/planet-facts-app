@@ -1,4 +1,4 @@
-import styles from './PlanetStat.module.css';
+import styles from './PlanetStat.module.scss';
 
 export default function PlanetStat({ planetStat }) {
   return (

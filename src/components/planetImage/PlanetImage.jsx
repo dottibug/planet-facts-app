@@ -1,8 +1,8 @@
-import styles from './PlanetImage.module.css';
-import { planetImageSizes } from '../../data/planetImageSizes';
-import { useMediaContext } from '../context/useMediaContext';
-import { DESKTOP, TABLET, MOBILE } from '../context/mediaContext';
+import styles from './PlanetImage.module.scss';
 import { useParams } from 'react-router-dom';
+import { useMediaContext } from '../../context/useMediaContext';
+import { DESKTOP, TABLET, MOBILE, LAPTOP } from '../../context/mediaContext';
+import { planetImageSizes } from '../../../data/planetImageSizes';
 
 export default function PlanetImage({ name, images, info }) {
   const { planet } = useParams();
@@ -20,6 +20,12 @@ export default function PlanetImage({ name, images, info }) {
         width: `${planetImageSizes[planet][DESKTOP.toLowerCase()]}px`,
         height: `${planetImageSizes[planet][DESKTOP.toLowerCase()]}px`,
       };
+
+    // if (media === LAPTOP)
+    //   return {
+    //     width: `${planetImageSizes[planet][LAPTOP.toLowerCase()]}px`,
+    //     height: `${planetImageSizes[planet][LAPTOP.toLowerCase()]}px`,
+    //   };
 
     if (media === TABLET)
       return {

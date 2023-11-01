@@ -1,10 +1,10 @@
-import styles from './Layout.module.css';
+import styles from './Layout.module.scss';
 import { Outlet } from 'react-router-dom';
-import Nav from './components/Nav';
-import { useMediaContext } from './context/useMediaContext';
-import { MOBILE } from './context/mediaContext';
-import MobileNav from './components/MobileNav';
 import { useState } from 'react';
+import { useMediaContext } from '../context/useMediaContext';
+import { MOBILE } from '../context/mediaContext';
+import Nav from '../components/navigation/Nav';
+import MobileNav from '../components/mobile/MobileNav';
 
 export default function Layout() {
   const media = useMediaContext();

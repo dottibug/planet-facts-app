@@ -1,0 +1,25 @@
+@import '../../sass/mixins';
+
+.source {
+  display: flex;
+  gap: 0.8rem;
+  opacity: 0.5;
+
+  @include respond-to(mobile) {
+    margin-top: 0.5rem;
+  }
+}
+
+.link {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  font-weight: 700;
+  gap: 0.5rem;
+  text-decoration-line: underline;
+}
+
+.linkIcon {
+  height: 12px;
+  width: 12px;
+}

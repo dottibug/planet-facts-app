@@ -1,0 +1,22 @@
+@use '../base' as base;
+@import '../sass/mixins';
+
+.layout {
+  padding-bottom: 5.6rem;
+}
+
+.outlet {
+  padding: 0 165px;
+
+  @include respond-to(laptop) {
+    padding: 0 124px;
+  }
+
+  @include respond-to(tablet) {
+    padding: 0 5rem;
+  }
+
+  @include respond-to(mobile) {
+    padding: 0 2.4rem;
+  }
+}

@@ -1,6 +1,6 @@
-import styles from './MobileTabs.module.css';
-import { tabs } from '../../data/infoTabs';
+import styles from './MobileTabs.module.scss';
 import MobileTab from './MobileTab';
+import { tabs } from '../../../data/infoTabs';
 
 export default function MobileTabs() {
   return (

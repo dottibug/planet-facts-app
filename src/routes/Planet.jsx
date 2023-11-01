@@ -1,15 +1,15 @@
-import styles from './Planet.module.css';
+import styles from './Planet.module.scss';
 import { useParams, useLoaderData } from 'react-router-dom';
-import PlanetImage from '../components/PlanetImage';
-import PlanetFacts from '../components/PlanetFacts';
-import PlanetStats from '../components/PlanetStats';
 import { useMediaContext } from '../context/useMediaContext';
 import { MOBILE } from '../context/mediaContext';
-import MobileTabs from '../components/MobileTabs';
+import MobileTabs from '../components/mobile/MobileTabs';
+import PlanetImage from '../components/planetImage/PlanetImage';
+import PlanetFacts from '../components/planetFacts/PlanetFacts';
+import PlanetStats from '../components/planetStats/PlanetStats';
 
 export default function Planet() {
-  const media = useMediaContext();
   const info = useParams().info || 'overview';
+  const media = useMediaContext();
   const currentPlanet = useLoaderData();
   const { rotation, revolution, radius, temperature, name, images } = currentPlanet;
 

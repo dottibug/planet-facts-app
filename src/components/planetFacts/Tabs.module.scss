@@ -1,0 +1,15 @@
+@import '../../sass/mixins';
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  @include respond-to(tablet) {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    height: inherit;
+    justify-content: center;
+  }
+}

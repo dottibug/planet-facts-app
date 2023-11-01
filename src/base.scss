@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio&family=League+Spartan:wght@400;700&display=swap');
+
+@import './sass/reset';
+@import './sass/mixins';
+
+// VARIABLES
+$fontAntonio: 'Antonio', sans-serif;
+$fontSpartan: 'League Spartan', sans-serif;
+
+$font-size-xxxsmall: 1.2rem;
+$font-size-xxsmall: 1.4rem;
+$font-size-xsmall: 1.6rem;
+$font-size-small: 1.8rem;
+$font-size-medium: 2.4rem;
+$font-size-large: 3rem;
+$font-size-xlarge: 4rem;
+$font-size-xxlarge: 4.8rem;
+$font-size-xxxlarge: 8rem;
+
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+$line-height-small: 16px;
+$line-height-medium: 25px;
+$line-height-large: 52px;
+$line-height-xlarge: 103px;
+
+$letter-spacing-narrow: -1.05px;
+$letter-spacing-normal: 1px;
+$letter-spacing-wide: 2.571px;
+
+// GLOBAL CLASSES
+.siteTitle {
+  font-family: $fontAntonio;
+  font-size: $font-size-large;
+  font-style: normal;
+  font-weight: $font-weight-normal;
+  line-height: normal;
+  letter-spacing: $letter-spacing-narrow;
+  text-transform: uppercase;
+}
+
+.buttonText {
+  font-family: $fontSpartan;
+  font-size: $font-size-xxxsmall;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-medium;
+  letter-spacing: $letter-spacing-wide;
+  text-transform: uppercase;
+}
+
+.body {
+  font-family: $fontSpartan;
+  font-size: $font-size-small;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-medium;
+  font-style: normal;
+
+  @include respond-to(tablet) {
+    font-size: $font-size-xsmall;
+  }
+
+  @include respond-to(mobile) {
+    font-size: $font-size-xsmall;
+  }
+}
+
+.headingOne {
+  font-family: $fontAntonio;
+  font-size: $font-size-xxxlarge;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-xlarge;
+  text-transform: uppercase;
+
+  @include respond-to(laptop) {
+    font-size: 7rem;
+  }
+
+  @include respond-to(tablet) {
+    font-size: $font-size-xxlarge;
+    line-height: normal;
+  }
+
+  @include respond-to(mobile) {
+    font-size: $font-size-xlarge;
+    line-height: $line-height-large;
+    text-align: center;
+  }
+}
+
+.headingTwo {
+  font-family: $fontAntonio;
+  font-size: $font-size-xlarge;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-large;
+  letter-spacing: -1.5px;
+  text-transform: uppercase;
+
+  @include respond-to(laptop) {
+    font-size: $font-size-large;
+    line-height: normal;
+  }
+
+  @include respond-to(tablet) {
+    font-size: $font-size-medium;
+    letter-spacing: -0.9px;
+    line-height: normal;
+  }
+
+  @include respond-to(mobile) {
+    font-size: 2rem;
+    letter-spacing: -0.75px;
+    line-height: normal;
+  }
+}
+
+.headingThree {
+  font-family: $fontSpartan;
+  font-size: $font-size-xxsmall;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-medium;
+  letter-spacing: $letter-spacing-wide;
+  text-transform: uppercase;
+
+  @include respond-to(tablet) {
+    font-size: $font-size-xxxsmall;
+    letter-spacing: 1.929px;
+  }
+
+  @include respond-to(mobile) {
+    font-size: $font-size-xxsmall;
+    letter-spacing: $letter-spacing-wide;
+  }
+}
+
+.headingFour {
+  font-family: $fontSpartan;
+  font-size: $font-size-xxxsmall;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-medium;
+  letter-spacing: $letter-spacing-normal;
+  text-transform: uppercase;
+
+  @include respond-to(tablet) {
+    font-size: 1rem;
+    line-height: $line-height-small;
+    letter-spacing: 0.727px;
+  }
+
+  @include respond-to(mobile) {
+    font-size: $font-size-xxxsmall;
+    line-height: $line-height-small;
+    letter-spacing: 0.727px;
+  }
+}

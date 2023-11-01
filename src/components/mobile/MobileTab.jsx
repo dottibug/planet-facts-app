@@ -1,7 +1,6 @@
-import styles from './MobileTab.module.css';
-import { NavLink } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
-import { planetColors } from '../../data/planetColors';
+import styles from './MobileTab.module.scss';
+import { useParams, NavLink } from 'react-router-dom';
+import { planetColors } from '../../../data/planetColors';
 
 export default function MobileTab({ tab, index }) {
   const { planet } = useParams();

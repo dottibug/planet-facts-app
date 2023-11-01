@@ -1,15 +1,11 @@
-import styles from './MobileNav.module.css';
-import { useState } from 'react';
-import { planetsArray } from '../../data/planetsArray';
-import { planetColors } from '../../data/planetColors';
+import styles from './MobileNav.module.scss';
 import { NavLink } from 'react-router-dom';
+import { planetsArray } from '../../../data/planetsArray';
+import { planetColors } from '../../../data/planetColors';
 
 export default function MobileNav({ isOpen, setIsOpen }) {
-  // const [isOpen, setIsOpen] = useState(false);
-
   // HANDLERS
   const handleClickMenuButton = () => setIsOpen((isOpen) => !isOpen);
-
   const handleClickMenu = () => setIsOpen(false);
 
   // INLINE STYLES

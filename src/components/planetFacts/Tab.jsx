@@ -1,7 +1,7 @@
-import styles from './Tab.module.css';
+import styles from './Tab.module.scss';
 import { useParams } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
-import { planetColors } from '../../data/planetColors';
+import { planetColors } from '../../../data/planetColors';
 
 export default function Tab({ tab, index }) {
   const { planet } = useParams();

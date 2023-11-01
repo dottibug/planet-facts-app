@@ -1,0 +1,35 @@
+@use '../../base' as base;
+@import '../../sass/mixins';
+
+.tab {
+  background-color: transparent;
+  border: 1px solid #ffffff20;
+  display: inline-flex;
+  gap: 1rem;
+  height: 48px;
+  padding: 12px 0 11px 28px;
+  text-decoration: none;
+  width: 350px;
+
+  &:not(.active):hover {
+    background-color: #d8d8d820;
+    border-color: transparent;
+    cursor: pointer;
+  }
+
+  @include respond-to(tablet) {
+    width: 100%;
+  }
+}
+
+.active {
+  cursor: default;
+}
+
+.tabNum {
+  color: #ffffff50;
+}
+
+.tabName {
+  color: #fff;
+}

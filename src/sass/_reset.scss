@@ -1,0 +1,63 @@
+// CSS RESET
+$backgroundColor: #070724;
+
+// Box sizing
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+// Margin and padding
+* {
+  margin: 0;
+  padding: 0;
+}
+// Percent-based height (100vh doesn't work on well on all browsers)
+html,
+body,
+#__next {
+  background-color: $backgroundColor;
+  height: 100%;
+}
+// Easily translate pixels to rem units while maintaining user font size preference
+html {
+  font-size: 62.5%;
+}
+// WCAG recommended line-height (reduce for large heading)
+// Smoother text on Chrome and Safari for Mac
+// Recommended base font size
+body {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+// Remove user-agent font styles
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+// No text overflow
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #fff;
+  overflow-wrap: break-word;
+}
+
+// Media defaults
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}

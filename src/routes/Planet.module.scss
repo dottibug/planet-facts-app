@@ -1,0 +1,30 @@
+@use '../base' as base;
+@import '../sass/mixins';
+
+.planet {
+  @include respond-to(desktop) {
+    display: grid;
+    grid-template-areas: 'image facts';
+    grid-template-columns: 1fr auto;
+    height: 668px;
+  }
+
+  @include respond-to(laptop) {
+    display: grid;
+    grid-template-areas: 'image facts';
+    grid-template-columns: 1fr auto;
+  }
+
+  @include respond-to(tablet) {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0rem;
+  }
+
+  @include respond-to(mobile) {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0rem;
+  }
+}

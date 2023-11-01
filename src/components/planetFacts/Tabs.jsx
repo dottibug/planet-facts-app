@@ -1,6 +1,6 @@
-import styles from './Tabs.module.css';
+import styles from './Tabs.module.scss';
 import Tab from './Tab';
-import { tabs } from '../../data/infoTabs';
+import { tabs } from '../../../data/infoTabs';
 
 export default function Tabs() {
   return (
