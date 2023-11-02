@@ -2,47 +2,40 @@ import { createContext, useState, useEffect } from 'react';
 
 export const MediaContext = createContext(null);
 
-// TODO another size LAPTOP starting at 1062;
-// ORIGINAL
-// const DESKTOP_SIZE = 1280;
-// const TABLET_SIZE = 912;
-// const MOBILE_SIZE = 412;
+const MOBILE_MAX = 744;
+const TABLET_MIN = 745;
+const TABLET_MAX = 1092;
+const LAPTOP_MIN = 1093;
+const LAPTOP_MAX = 1419;
+const DESKTOP_MIN = 1420;
 
-// TEST
-
-// NOTE: fix wiki source spacing on tablet size
-const DESKTOP_SIZE = 1420;
-const LAPTOP_SIZE = 1093;
-const TABLET_SIZE = 745;
-const MOBILE_SIZE = 744;
-
-export const DESKTOP = 'DESKTOP';
-export const LAPTOP = 'LAPTOP';
-export const TABLET = 'TABLET';
 export const MOBILE = 'MOBILE';
+export const TABLET = 'TABLET';
+export const LAPTOP = 'LAPTOP';
+export const DESKTOP = 'DESKTOP';
 
 export default function MediaProvider({ children }) {
-  const [media, setMedia] = useState(DESKTOP);
+  const [media, setMedia] = useState(MOBILE);
 
   // Get initial media size
   useEffect(() => {
-    if (window.innerWidth < TABLET_SIZE) setMedia(MOBILE);
-    else if (window.innerWidth >= TABLET_SIZE && window.innerWidth < LAPTOP_SIZE)
+    if (window.innerWidth <= MOBILE_MAX) setMedia(MOBILE);
+    else if (window.innerWidth >= TABLET_MIN && window.innerWidth <= TABLET_MAX)
       setMedia(TABLET);
-    else if (window.innerWidth >= LAPTOP_SIZE && window.innerWidth < DESKTOP_SIZE)
+    else if (window.innerWidth >= LAPTOP_MIN && window.innerWidth <= LAPTOP_MAX)
       setMedia(LAPTOP);
-    else if (window.innerWidth >= DESKTOP_SIZE) setMedia(DESKTOP);
+    else if (window.innerWidth >= DESKTOP_MIN) setMedia(DESKTOP);
   }, []);
 
   // Get media size on resize
   useEffect(() => {
     const setMediaSize = () => {
-      if (window.innerWidth < TABLET_SIZE) setMedia(MOBILE);
-      else if (window.innerWidth >= TABLET_SIZE && window.innerWidth < LAPTOP_SIZE)
+      if (window.innerWidth <= MOBILE_MAX) setMedia(MOBILE);
+      else if (window.innerWidth >= TABLET_MIN && window.innerWidth <= TABLET_MAX)
         setMedia(TABLET);
-      else if (window.innerWidth >= LAPTOP_SIZE && window.innerWidth < DESKTOP_SIZE)
+      else if (window.innerWidth >= LAPTOP_MIN && window.innerWidth <= LAPTOP_MAX)
         setMedia(LAPTOP);
-      else if (window.innerWidth >= DESKTOP_SIZE) setMedia(DESKTOP);
+      else if (window.innerWidth >= DESKTOP_MIN) setMedia(DESKTOP);
     };
 
     window.addEventListener('resize', setMediaSize);

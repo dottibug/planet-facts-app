@@ -10,13 +10,15 @@ export default function PlanetFactsMobileTablet({ planet, info }) {
   const { name } = planet;
 
   return (
-    <div className={styles.planetFacts}>
+    <>
       <div className={styles.summary}>
-        <h1 className="headingOne">{name}</h1>
-        <p className={`${styles.planetInfo} body`}>{getPlanetInfo(info, planet)}</p>
+        <div className={styles.namePlanetInfoWrapper}>
+          <h1 className="headingOne">{name}</h1>
+          <p className={`${styles.planetInfo} body`}>{getPlanetInfo(info, planet)}</p>
+        </div>
         <Source planet={planet} info={info} />
       </div>
       {media !== MOBILE && <Tabs />}
-    </div>
+    </>
   );
 }

@@ -1,34 +1,21 @@
-@use '../../base' as base;
 @import '../../sass/mixins';
 
 .summary {
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
-  margin-top: 8.4rem;
-
-  @include respond-to(tablet) {
-    width: 100%;
-    height: 300px;
-  }
-
-  @include respond-to(mobile) {
-    align-items: center;
-    gap: 3rem;
-    padding: 0 2.4rem;
-  }
+  gap: 3rem;
+  padding: 0;
+  width: 100%;
 }
 
 .planetInfo {
-  height: fit-content;
-
-  @include respond-to(mobile) {
-    text-align: center;
-  }
+  height: 150px;
 }
 
 .sourceAndTabsWrapper {
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  width: 100%;
 }

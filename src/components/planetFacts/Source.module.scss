@@ -3,10 +3,11 @@
 .source {
   display: flex;
   gap: 0.8rem;
+  margin-top: 0.5rem;
   opacity: 0.5;
 
-  @include respond-to(mobile) {
-    margin-top: 0.5rem;
+  @include respond-to(desktop) {
+    margin-top: 0;
   }
 }
 

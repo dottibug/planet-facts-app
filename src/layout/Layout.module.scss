@@ -1,22 +1,21 @@
 @use '../base' as base;
 @import '../sass/mixins';
 
+$outletPaddingLaptop: 64px;
+$outletPaddingDesktop: 124px;
+
 .layout {
   padding-bottom: 5.6rem;
 }
 
 .outlet {
-  padding: 0 165px;
+  padding: 0 5rem;
 
   @include respond-to(laptop) {
-    padding: 0 124px;
+    padding: 0 $outletPaddingLaptop 0 0;
   }
 
-  @include respond-to(tablet) {
-    padding: 0 5rem;
-  }
-
-  @include respond-to(mobile) {
-    padding: 0 2.4rem;
+  @include respond-to(desktop) {
+    padding: 0 $outletPaddingDesktop 0 0;
   }
 }

@@ -21,11 +21,11 @@ export default function PlanetImage({ name, images, info }) {
         height: `${planetImageSizes[planet][DESKTOP.toLowerCase()]}px`,
       };
 
-    // if (media === LAPTOP)
-    //   return {
-    //     width: `${planetImageSizes[planet][LAPTOP.toLowerCase()]}px`,
-    //     height: `${planetImageSizes[planet][LAPTOP.toLowerCase()]}px`,
-    //   };
+    if (media === LAPTOP)
+      return {
+        width: `${planetImageSizes[planet][LAPTOP.toLowerCase()]}px`,
+        height: `${planetImageSizes[planet][LAPTOP.toLowerCase()]}px`,
+      };
 
     if (media === TABLET)
       return {

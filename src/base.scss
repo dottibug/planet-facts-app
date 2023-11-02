@@ -51,7 +51,7 @@ $letter-spacing-wide: 2.571px;
 
 .body {
   font-family: $fontSpartan;
-  font-size: $font-size-small;
+  font-size: $font-size-xsmall;
   font-weight: $font-weight-normal;
   line-height: $line-height-medium;
   font-style: normal;
@@ -60,57 +60,55 @@ $letter-spacing-wide: 2.571px;
     font-size: $font-size-xsmall;
   }
 
-  @include respond-to(mobile) {
-    font-size: $font-size-xsmall;
+  @include respond-to(laptop) {
+    font-size: $font-size-small;
   }
 }
 
 .headingOne {
   font-family: $fontAntonio;
-  font-size: $font-size-xxxlarge;
+  font-size: $font-size-xlarge;
   font-weight: $font-weight-normal;
-  line-height: $line-height-xlarge;
+  line-height: $line-height-large;
+  text-align: center;
   text-transform: uppercase;
-
-  @include respond-to(laptop) {
-    font-size: 7rem;
-  }
 
   @include respond-to(tablet) {
     font-size: $font-size-xxlarge;
     line-height: normal;
   }
 
-  @include respond-to(mobile) {
-    font-size: $font-size-xlarge;
-    line-height: $line-height-large;
-    text-align: center;
+  @include respond-to(laptop) {
+    font-size: 7rem;
+  }
+
+  @include respond-to(desktop) {
+    font-size: $font-size-xxxlarge;
+    line-height: $line-height-xlarge;
   }
 }
 
 .headingTwo {
   font-family: $fontAntonio;
-  font-size: $font-size-xlarge;
+  font-size: 2rem;
   font-weight: $font-weight-normal;
-  line-height: $line-height-large;
-  letter-spacing: -1.5px;
+  line-height: normal;
+  letter-spacing: -0.75px;
   text-transform: uppercase;
-
-  @include respond-to(laptop) {
-    font-size: $font-size-large;
-    line-height: normal;
-  }
 
   @include respond-to(tablet) {
     font-size: $font-size-medium;
     letter-spacing: -0.9px;
-    line-height: normal;
   }
 
-  @include respond-to(mobile) {
-    font-size: 2rem;
-    letter-spacing: -0.75px;
-    line-height: normal;
+  @include respond-to(laptop) {
+    font-size: $font-size-large;
+  }
+
+  @include respond-to(desktop) {
+    font-size: $font-size-xlarge;
+    line-height: $line-height-large;
+    letter-spacing: -1.5px;
   }
 }
 
@@ -123,13 +121,8 @@ $letter-spacing-wide: 2.571px;
   text-transform: uppercase;
 
   @include respond-to(tablet) {
-    font-size: $font-size-xxxsmall;
-    letter-spacing: 1.929px;
-  }
-
-  @include respond-to(mobile) {
     font-size: $font-size-xxsmall;
-    letter-spacing: $letter-spacing-wide;
+    letter-spacing: 1.929px;
   }
 }
 
@@ -142,14 +135,11 @@ $letter-spacing-wide: 2.571px;
   text-transform: uppercase;
 
   @include respond-to(tablet) {
-    font-size: 1rem;
     line-height: $line-height-small;
     letter-spacing: 0.727px;
   }
 
-  @include respond-to(mobile) {
-    font-size: $font-size-xxxsmall;
-    line-height: $line-height-small;
-    letter-spacing: 0.727px;
+  @include respond-to(laptop) {
+    font-size: $font-size-xxsmall;
   }
 }

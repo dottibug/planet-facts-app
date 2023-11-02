@@ -1,27 +1,36 @@
 @import '../../sass/mixins';
 
 .summary {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
-  margin-top: 8.4rem;
+  gap: 3rem;
+  justify-content: space-between;
 
   @include respond-to(tablet) {
+    align-items: flex-start;
+    min-height: 300px;
+    padding: 0;
     width: 100%;
-    height: 300px;
   }
+}
 
-  @include respond-to(mobile) {
-    align-items: center;
-    gap: 3rem;
-    padding: 0 2.4rem;
+.namePlanetInfoWrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  @include respond-to(tablet) {
+    align-items: flex-start;
   }
 }
 
 .planetInfo {
   height: fit-content;
+  text-align: center;
 
-  @include respond-to(mobile) {
-    text-align: center;
+  @include respond-to(tablet) {
+    text-align: left;
   }
 }
