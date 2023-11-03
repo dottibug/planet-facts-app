@@ -1,0 +1,39 @@
+@use '../../base' as base;
+
+.mobileNavListItem {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+  padding: 2rem 1rem 2rem 0;
+
+  &:not(&:last-child) {
+    border-bottom: 1px solid #ffffff20;
+  }
+}
+
+.mobileNavLink {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.planet {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+}
+
+.name {
+  color: #fff;
+  font-family: base.$fontSpartan;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 1.364px;
+  line-height: 25px;
+  text-align: center;
+  text-transform: uppercase;
+}

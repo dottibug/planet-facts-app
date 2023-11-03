@@ -1,65 +1,18 @@
 import styles from './MobileNav.module.scss';
-import { NavLink } from 'react-router-dom';
-import { planetsArray } from '../../../data/planetsArray';
-import { planetColors } from '../../../data/planetColors';
+import NavToggleButton from './NavToggleButton';
+import MobileNavLinks from './MobileNavLinks';
+import { AnimatePresence } from 'framer-motion';
 
-export default function MobileNav({ isOpen, setIsOpen }) {
-  // HANDLERS
-  const handleClickMenuButton = () => setIsOpen((isOpen) => !isOpen);
-  const handleClickMenu = () => setIsOpen(false);
-
-  // INLINE STYLES
-  const menuButtonStyle = isOpen ? { opacity: '0.2487' } : {};
-
+export default function MobileNav({ isOpen, toggleOpen }) {
   return (
     <nav className={styles.mobileNavMenu}>
       <div className={styles.mobileNavBar}>
         <h1 className="siteTitle">The Planets</h1>
-        <button
-          className={styles.menuButton}
-          style={menuButtonStyle}
-          onClick={handleClickMenuButton}>
-          <img src="/assets/icon-hamburger.svg" alt="Navigation menu icon" />
-        </button>
+        <NavToggleButton isOpen={isOpen} toggleOpen={toggleOpen} />
       </div>
-      {isOpen && (
-        <ul className={styles.mobileNavList}>
-          {planetsArray.map((planet) => (
-            <li key={planet} className={styles.mobileNavListItem}>
-              <NavLink
-                to={`/${planet}`}
-                onClick={handleClickMenu}
-                className={styles.mobileNavLink}>
-                <div className={styles.planet}>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none">
-                    <circle cx="10" cy="10" r="10" fill={planetColors[planet]} />
-                  </svg>
-                  <p className={styles.name}>{planet}</p>
-                </div>
-                {/* <img
-                  className={styles.arrow}
-                  src="/assets/icon-chevron.svg"
-                  alt={`Selection arrow for ${planet.at(0).toUpperCase()}${planet.slice(
-                    1
-                  )}`}
-                /> */}
-              </NavLink>
-              <img
-                className={styles.arrow}
-                src="/assets/icon-chevron.svg"
-                alt={`Selection arrow for ${planet.at(0).toUpperCase()}${planet.slice(
-                  1
-                )}`}
-              />
-            </li>
-          ))}
-        </ul>
-      )}
+      {/* <AnimatePresence> */}
+      <MobileNavLinks isOpen={isOpen} toggleOpen={toggleOpen} />
+      {/* </AnimatePresence> */}
     </nav>
   );
 }
