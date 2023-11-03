@@ -30,8 +30,8 @@ export default function Layout() {
       opacity: 1,
       transition: {
         ease: 'easeOut',
-        duration: 0.2,
         delay: 0.2,
+        duration: 0.2,
       },
     },
   };
@@ -39,7 +39,7 @@ export default function Layout() {
   return (
     <main className={styles.layout} style={mainStyle()}>
       {media === MOBILE ? <MobileNav isOpen={isOpen} toggleOpen={toggleOpen} /> : <Nav />}
-      <AnimatePresence initial={true}>
+      <AnimatePresence initial={false}>
         {!isOpen && (
           <motion.div
             key={!isOpen}
