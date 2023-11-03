@@ -19,18 +19,18 @@ export default function Layout() {
   };
 
   const variants = {
-    hide: {
+    hideOutlet: {
       opacity: 0,
       transition: {
         ease: 'easeOut',
-        duration: 0.2,
+        duration: 0,
       },
     },
-    show: {
+    showOutlet: {
       opacity: 1,
       transition: {
         ease: 'easeOut',
-        delay: 0.2,
+        delay: 0.3,
         duration: 0.2,
       },
     },
@@ -45,8 +45,8 @@ export default function Layout() {
             key={!isOpen}
             variants={variants}
             initial={{ opacity: 0 }}
-            animate="show"
-            exit="hide"
+            animate="showOutlet"
+            exit="hideOutlet"
             className={styles.outlet}>
             <Outlet />
           </motion.div>

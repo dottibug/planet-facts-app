@@ -4,15 +4,15 @@ import { planetsArray } from '../../../data/planetsArray';
 import MobileNavLink from './MobileNavLink';
 
 const variants = {
-  open: {
+  openNav: {
     opacity: 1,
     transition: {
       ease: 'easeOut',
-      duration: 0.5,
       delay: 0.2,
+      duration: 0.5,
     },
   },
-  close: {
+  closeNav: {
     opacity: 0,
     transition: {
       ease: 'easeOut',
@@ -29,8 +29,8 @@ export default function MobileNavLinks({ isOpen, toggleOpen }) {
           key={isOpen}
           variants={variants}
           initial={{ opacity: 0 }}
-          animate="open"
-          exit="close"
+          animate="openNav"
+          exit="closeNav"
           className={styles.mobileNavList}>
           {planetsArray.map((planet) => (
             <MobileNavLink key={planet} planet={planet} toggleOpen={toggleOpen} />
