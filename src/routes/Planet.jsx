@@ -6,6 +6,7 @@ import MobileTabs from '../components/mobile/MobileTabs';
 import PlanetImage from '../components/planetImage/PlanetImage';
 import PlanetFacts from '../components/planetFacts/PlanetFacts';
 import PlanetStats from '../components/planetStats/PlanetStats';
+import PageTransition from '../PageTransition';
 
 export default function Planet() {
   const info = useParams().info || 'overview';
@@ -21,13 +22,17 @@ export default function Planet() {
   ];
 
   return (
+    // <PageTransition>
     <>
       <div className={styles.planet}>
         {media === MOBILE && <MobileTabs />}
+        {/* <PageTransition> */}
         <PlanetImage name={name} images={images} info={info} />
+        {/* </PageTransition> */}
         <PlanetFacts planet={currentPlanet} name={name} info={info} />
       </div>
       <PlanetStats planetStats={planetStats} />
     </>
+    // </PageTransition>
   );
 }

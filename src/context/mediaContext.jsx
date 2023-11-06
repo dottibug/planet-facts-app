@@ -43,7 +43,5 @@ export default function MediaProvider({ children }) {
     return () => window.removeEventListener('resize', setMediaSize);
   }, []);
 
-  console.log('MEDIA: ', media);
-
   return <MediaContext.Provider value={media}>{children}</MediaContext.Provider>;
 }

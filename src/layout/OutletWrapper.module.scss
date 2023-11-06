@@ -1,0 +1,16 @@
+@import '../sass/mixins';
+
+$outletPaddingLaptop: 64px;
+$outletPaddingDesktop: 124px;
+
+.outlet {
+  padding: 0 5rem;
+
+  @include respond-to(laptop) {
+    padding: 0 $outletPaddingLaptop 0 0;
+  }
+
+  @include respond-to(desktop) {
+    padding: 0 $outletPaddingDesktop 0 0;
+  }
+}

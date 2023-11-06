@@ -1,5 +1,5 @@
 import styles from './PlanetImage.module.scss';
-import { useState, useEffect, useRef, useMemo } from 'react';
+import { useState, useEffect, useRef, useMemo, Suspense } from 'react';
 import OverviewImage from './OverviewImage';
 import InternalImage from './InternalImage';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -10,6 +10,7 @@ import {
 } from './helpers/planetImageHelpers';
 import { useMediaContext } from '../../context/useMediaContext';
 import { useParams } from 'react-router-dom';
+import PageTransition from '../../pageTransition';
 
 // Animations
 const animations = {

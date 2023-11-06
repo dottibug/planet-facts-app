@@ -8,6 +8,10 @@ const geologyImageVariants = {
     opacity: 1,
     transition: { delay: 0.1, duration: 0.2, ease: 'easeOut' },
   },
+  exit: {
+    opacity: 0,
+    transition: { duration: 0.1, ease: 'easeOut' },
+  },
 };
 
 export default function SurfaceGeologyImage({ info, images, name, prevInfo }) {
@@ -24,6 +28,7 @@ export default function SurfaceGeologyImage({ info, images, name, prevInfo }) {
           variants={geologyImageVariants}
           initial={initialGeologyOpacity}
           animate={animateGeologyImage}
+          exit="exit"
           className={styles.surface}
           src={images.geology}
           alt={`Closeup of the surface of ${name}`}

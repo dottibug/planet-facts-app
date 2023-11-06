@@ -1,4 +1,4 @@
-@use '../../layout/Layout.module.scss' as layout;
+@use '../../layout/OutletWrapper.module.scss' as outlet;
 @import '../../sass/mixins';
 
 .footer {
@@ -19,11 +19,11 @@
   @include respond-to(laptop) {
     gap: 3rem;
     margin-top: 8.6rem;
-    padding-left: layout.$outletPaddingLaptop;
+    padding-left: outlet.$outletPaddingLaptop;
   }
 
   @include respond-to(desktop) {
     margin-top: 7.6rem;
-    padding-left: layout.$outletPaddingDesktop;
+    padding-left: outlet.$outletPaddingDesktop;
   }
 }
