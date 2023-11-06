@@ -11,16 +11,8 @@ export default function Layout() {
   const media = useMediaContext();
   const { isMobileNavOpen } = useMobileNavContext();
 
-  const mainStyle = () => {
-    if (media === MOBILE && isMobileNavOpen) return;
-
-    return {
-      backgroundImage: `url('/assets/background-stars.svg')`,
-    };
-  };
-
   return (
-    <main className={styles.layout} style={mainStyle()}>
+    <main className={styles.layout}>
       {media === MOBILE ? <MobileNav /> : <Nav />}
       {!isMobileNavOpen && (
         <OutletWrapper>

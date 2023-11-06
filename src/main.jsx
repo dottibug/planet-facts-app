@@ -8,6 +8,7 @@ import ErrorPage from './pages/ErrorPage';
 import Planet from './routes/Planet';
 import { planetData } from '../data/data';
 import MobileNavProvider from './context/mobileNavContext';
+import Homepage from './routes/Homepage';
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
       // HOME
       {
         path: '/',
-        element: <div>Homepage</div>,
+        element: <Homepage />,
       },
       // PLANET
       {

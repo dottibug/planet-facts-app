@@ -29,6 +29,11 @@ $letter-spacing-narrow: -1.05px;
 $letter-spacing-normal: 1px;
 $letter-spacing-wide: 2.571px;
 
+html,
+body {
+  background-image: url('/assets/background-stars.svg');
+}
+
 // GLOBAL CLASSES
 .siteTitle {
   font-family: $fontAntonio;

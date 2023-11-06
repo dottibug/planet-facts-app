@@ -12,6 +12,7 @@ export default function Planet() {
   const info = useParams().info || 'overview';
   const media = useMediaContext();
   const currentPlanet = useLoaderData();
+  console.log('currentPlanet loader data: ', currentPlanet);
   const { rotation, revolution, radius, temperature, name, images } = currentPlanet;
 
   const planetStats = [
@@ -22,17 +23,13 @@ export default function Planet() {
   ];
 
   return (
-    // <PageTransition>
-    <>
+    <PageTransition>
       <div className={styles.planet}>
         {media === MOBILE && <MobileTabs />}
-        {/* <PageTransition> */}
         <PlanetImage name={name} images={images} info={info} />
-        {/* </PageTransition> */}
         <PlanetFacts planet={currentPlanet} name={name} info={info} />
       </div>
       <PlanetStats planetStats={planetStats} />
-    </>
-    // </PageTransition>
+    </PageTransition>
   );
 }

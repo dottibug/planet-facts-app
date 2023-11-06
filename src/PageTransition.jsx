@@ -9,37 +9,37 @@ export default function PageTransition({ children }) {
   const [loading, setLoading] = useState(true);
   const [currentPlanetData, setCurrentPlanetData] = useState(null);
 
-  useEffect(() => {
-    setLoading(true);
+  // useEffect(() => {
+  //   setLoading(true);
 
-    const planetTimeout = setTimeout(() => {
-      if (!planet) setCurrentPlanetData('mars');
-      else if (planet)
-        setCurrentPlanetData(
-          planetData.find((pl) => pl.name.toLowerCase() === planet.toLowerCase())
-        );
+  //   const planetTimeout = setTimeout(() => {
+  //     // if (!planet) setCurrentPlanetData('mars');
+  //     if (planet)
+  //       setCurrentPlanetData(
+  //         planetData.find((pl) => pl.name.toLowerCase() === planet.toLowerCase())
+  //       );
 
-      setLoading(false);
-    }, 250);
+  //     setLoading(false);
+  //   }, 250);
 
-    return () => clearTimeout(planetTimeout);
-  }, [planet]);
+  //   return () => clearTimeout(planetTimeout);
+  // }, [planet]);
 
   // TODO Loading component
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
 
   const pageVariants = {
     pageVisible: {
       opacity: 1,
-      transition: { duration: 0.15, ease: 'easeOut' },
+      transition: { duration: 0.5, ease: 'easeOut' },
       filter: 'blur(0px)',
     },
     exit: {
       opacity: 0,
-      transition: { duration: 0.15, ease: 'easeOut' },
-      filter: 'blur(5px)',
+      transition: { duration: 0.3, ease: 'easeOut' },
+      filter: 'blur(1.5px)',
     },
   };
 
@@ -49,7 +49,7 @@ export default function PageTransition({ children }) {
       variants={pageVariants}
       initial={{
         opacity: 0,
-        filter: 'blur(5px)',
+        filter: 'blur(1.5px)',
       }}
       animate="pageVisible"
       exit="exit"
