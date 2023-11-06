@@ -1,69 +1,83 @@
 import styles from './PlanetImage.module.scss';
-import { useParams } from 'react-router-dom';
+import { useState, useEffect, useRef, useMemo } from 'react';
+import OverviewImage from './OverviewImage';
+import InternalImage from './InternalImage';
+import { AnimatePresence, motion } from 'framer-motion';
+import {
+  getPlanetImage,
+  getPlanetImageAlt,
+  getPlanetImageSize,
+} from './helpers/planetImageHelpers';
 import { useMediaContext } from '../../context/useMediaContext';
-import { DESKTOP, TABLET, MOBILE, LAPTOP } from '../../context/mediaContext';
-import { planetImageSizes } from '../../../data/planetImageSizes';
+import { useParams } from 'react-router-dom';
+
+// Animations
+const animations = {
+  noAnimation: {},
+  imageAnimation: {
+    opacity: 1,
+    transition: { duration: 0.2, ease: 'easeOut' },
+  },
+  exit: { opacity: 0, transition: { duration: 0.2, ease: 'easeIn' } },
+};
+
+// Initial animation settings
+const initial = (prevInfo) => {
+  if (prevInfo === 'internal-structure') return { opacity: 0 };
+  return { opacity: 1 };
+};
 
 export default function PlanetImage({ name, images, info }) {
-  const { planet } = useParams();
+  const prevInfo = useRef();
+  const [animationVariant, setAnimationVariant] = useState('noAnimation');
   const media = useMediaContext();
+  const { planet } = useParams();
 
-  const planetImage = () => {
-    if (info === 'overview') return images.planet;
-    if (info === 'internal-structure') return images.internal;
-    if (info === 'surface-geology') return images.planet;
-  };
+  // Set animation variant when info changes
+  useEffect(() => {
+    if (prevInfo.current !== info) {
+      const prev = prevInfo.current;
+      prevInfo.current = info;
 
-  const imageSize = () => {
-    if (media === DESKTOP)
-      return {
-        width: `${planetImageSizes[planet][DESKTOP.toLowerCase()]}px`,
-        height: `${planetImageSizes[planet][DESKTOP.toLowerCase()]}px`,
-      };
+      const isTransitionToOrFromInternal =
+        (prev === 'internal-structure' &&
+          (info === 'overview' || info === 'surface-geology')) ||
+        ((prev === 'overview' || prev === 'surface-geology') &&
+          info === 'internal-structure');
 
-    if (media === LAPTOP)
-      return {
-        width: `${planetImageSizes[planet][LAPTOP.toLowerCase()]}px`,
-        height: `${planetImageSizes[planet][LAPTOP.toLowerCase()]}px`,
-      };
+      setAnimationVariant(
+        isTransitionToOrFromInternal ? 'imageAnimation' : 'noAnimation'
+      );
+    }
+  }, [info]);
 
-    if (media === TABLET)
-      return {
-        width: `${planetImageSizes[planet][TABLET.toLowerCase()]}px`,
-        height: `${planetImageSizes[planet][TABLET.toLowerCase()]}px`,
-      };
+  const imageSrc = getPlanetImage(info, images);
+  const imageAlt = getPlanetImageAlt(name, info);
+  const imageSize = useMemo(() => getPlanetImageSize(media, planet), [media, planet]);
 
-    if (media === MOBILE)
-      return {
-        width: `${planetImageSizes[planet][MOBILE.toLowerCase()]}px`,
-        height: `${planetImageSizes[planet][MOBILE.toLowerCase()]}px`,
-      };
-  };
+  const ImageComponent = useMemo(() => {
+    return info === 'internal-structure' ? InternalImage : OverviewImage;
+  }, [info]);
 
   return (
-    <div className={styles.planetImageWrapper}>
-      <img
-        className={styles.planetImage}
-        src={planetImage()}
-        alt={getImageAlt(name, info)}
-        style={imageSize()}
-      />
-      {info === 'surface-geology' && (
-        <img
-          className={styles.surface}
-          src={images.geology}
-          alt={`Closeup of the surface of ${name}`}
+    <AnimatePresence mode="popLayout">
+      <motion.div
+        key={info}
+        variants={animations}
+        initial={initial(prevInfo.current)}
+        animate={animationVariant}
+        exit="exit"
+        className={styles.planetImageWrapper}>
+        <ImageComponent
+          info={info}
+          prevInfo={prevInfo.current}
+          images={images}
+          name={name}
+          imageSrc={imageSrc}
+          imageAlt={imageAlt}
+          imageSize={imageSize}
         />
-      )}
-    </div>
+      </motion.div>
+    </AnimatePresence>
   );
-}
-
-// HELPER FUNCTIONS
-function getImageAlt(planetName, info) {
-  const infoText = () => info.split('-').join(' ');
-
-  return `Image of ${
-    info === 'overview' ? planetName : `the ${infoText()} of ${planetName}`
-  }.`;
 }

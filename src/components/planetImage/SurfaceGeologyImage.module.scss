@@ -1,0 +1,23 @@
+@import '../../sass/mixins';
+
+.surface {
+  bottom: 2rem;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  @include surface-dimensions(100px);
+
+  @include respond-to(tablet) {
+    bottom: 2rem;
+    @include surface-dimensions(148px);
+  }
+
+  @include respond-to(laptop) {
+    @include surface-dimensions(176px);
+  }
+
+  @include respond-to(desktop) {
+    bottom: 6rem;
+    @include surface-dimensions(199px);
+  }
+}
