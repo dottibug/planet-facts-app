@@ -33,12 +33,12 @@ export default function PageTransition({ children }) {
   const pageVariants = {
     pageVisible: {
       opacity: 1,
-      transition: { duration: 0.5, ease: 'easeOut' },
+      transition: { delay: 0.1, duration: 0.3, ease: 'easeOut' },
       filter: 'blur(0px)',
     },
     exit: {
-      opacity: 0,
-      transition: { duration: 0.3, ease: 'easeOut' },
+      opacity: 0.75,
+      transition: { duration: 0.2, ease: 'easeOut' },
       filter: 'blur(1.5px)',
     },
   };
