@@ -9,6 +9,7 @@
   padding: 12px 0 11px 28px;
   text-decoration: none;
   width: 100%;
+  transition: 0.15s all ease-out;
 
   &:not(.active):hover {
     background-color: #d8d8d820;
@@ -21,8 +22,9 @@
   }
 }
 
-.active {
+.tab.active {
   cursor: default;
+  transition: 0.3s all ease-out;
 }
 
 .tabNum {

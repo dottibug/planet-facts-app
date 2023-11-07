@@ -11,6 +11,10 @@
   text-decoration: none;
 }
 
+.tab.active {
+  transition: 0.3s all ease-out;
+}
+
 .tabName {
   color: #ffffff50;
 }
