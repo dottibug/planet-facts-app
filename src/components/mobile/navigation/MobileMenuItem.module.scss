@@ -1,22 +1,23 @@
-@use '../../base' as base;
+@use '../../../base.scss';
 
-.mobileNavListItem {
+.mobileMenuItem {
   align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   list-style: none;
-  padding: 2rem 1rem 2rem 0;
+  padding: 0 2.4rem;
 
   &:not(&:last-child) {
     border-bottom: 1px solid #ffffff20;
   }
 }
 
-.mobileNavLink {
+.mobileMenuItemLink {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 2rem 0;
   text-decoration: none;
   width: 100%;
 }

@@ -1,10 +1,10 @@
-import styles from './MobileNavLinks.module.scss';
+import styles from './MobileMenu.module.scss';
 import { motion, AnimatePresence } from 'framer-motion';
-import { planetsArray } from '../../../data/planetsArray';
-import MobileNavLink from './MobileNavLink';
-import { useMobileNavContext } from '../../context/useMobileNavContext';
+import { planetsArray } from '../../../../data/planetsArray';
+import MobileMenuItem from './MobileMenuItem';
+import { useMobileNavContext } from '../../../context/useMobileNavContext';
 
-const mobileNavVariants = {
+const menuVariants = {
   openNav: {
     opacity: 1,
     transition: {
@@ -21,7 +21,7 @@ const mobileNavVariants = {
   },
 };
 
-export default function MobileNavLinks() {
+export default function MobileMenu() {
   const { isMobileNavOpen } = useMobileNavContext();
 
   return (
@@ -29,13 +29,13 @@ export default function MobileNavLinks() {
       {isMobileNavOpen && (
         <motion.ul
           key={isMobileNavOpen}
-          variants={mobileNavVariants}
+          variants={menuVariants}
           initial={{ opacity: 0 }}
           animate="openNav"
           exit="closeNav"
-          className={styles.mobileNavList}>
+          className={styles.mobileMenu}>
           {planetsArray.map((planet) => (
-            <MobileNavLink key={planet} planet={planet} />
+            <MobileMenuItem key={planet} planet={planet} />
           ))}
         </motion.ul>
       )}

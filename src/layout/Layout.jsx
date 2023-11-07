@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { useMediaContext } from '../context/useMediaContext';
 import { MOBILE } from '../context/mediaContext';
 import Nav from '../components/navigation/Nav';
-import MobileNav from '../components/mobile/MobileNav';
+import MobileNav from '../components/mobile/navigation/MobileNav';
 import OutletWrapper from './OutletWrapper';
 import { useMobileNavContext } from '../context/useMobileNavContext';
 

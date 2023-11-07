@@ -1,16 +1,16 @@
-import styles from './NavToggleButton.module.scss';
+import styles from './MobileMenuToggleButton.module.scss';
 import { motion } from 'framer-motion';
 import ToggleButtonPaths from './ToggleButtonPaths';
-import { useMobileNavContext } from '../../context/useMobileNavContext';
+import { useMobileNavContext } from '../../../../context/useMobileNavContext';
 
-export default function NavToggleButton() {
+export default function MobileMenuToggleButton() {
   const { isMobileNavOpen, toggleMobileNav } = useMobileNavContext();
   return (
     <motion.div
       initial={false}
       animate={isMobileNavOpen ? 'open' : 'closed'}
-      className={styles.navToggleButtonWrapper}>
-      <button onClick={() => toggleMobileNav()} className={styles.navToggleButton}>
+      className={styles.toggleButtonWrapper}>
+      <button onClick={() => toggleMobileNav()} className={styles.toggleButton}>
         <ToggleButtonPaths />
       </button>
     </motion.div>

@@ -1,15 +1,15 @@
 import styles from './MobileNav.module.scss';
-import NavToggleButton from './NavToggleButton';
-import MobileNavLinks from './MobileNavLinks';
+import MobileMenuToggleButton from './ui/MobileMenuToggleButton';
+import MobileMenu from './MobileMenu';
 
 export default function MobileNav() {
   return (
-    <nav className={styles.mobileNavMenu}>
+    <nav className={styles.mobileNav}>
       <div className={styles.mobileNavBar}>
         <h1 className="siteTitle">The Planets</h1>
-        <NavToggleButton />
+        <MobileMenuToggleButton />
       </div>
-      <MobileNavLinks />
+      <MobileMenu />
     </nav>
   );
 }
