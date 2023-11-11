@@ -1,0 +1,29 @@
+@use '../../base.scss' as base;
+@import '../../sass/mixins';
+
+.header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @include respond-to(tablet) {
+    gap: 3rem;
+  }
+}
+
+.headerBody {
+  font-family: base.$fontSpartan;
+  font-size: base.$font-size-xsmall;
+  font-weight: base.$font-weight-normal;
+  line-height: base.$line-height-medium;
+  font-style: normal;
+  text-align: center;
+  width: 100%;
+
+  @include respond-to(tablet) {
+    font-size: base.$font-size-medium;
+    line-height: 42px;
+    width: 75%;
+  }
+}

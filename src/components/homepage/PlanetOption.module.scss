@@ -1,0 +1,62 @@
+@use '../../base.scss' as base;
+@import '../../sass/mixins';
+
+.planetOptionListItem {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  width: 80%;
+
+  @include respond-to(tablet) {
+    width: 28%;
+  }
+
+  @include respond-to(laptop) {
+    width: 20%;
+  }
+}
+
+.planetOption {
+  align-items: center;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease-out;
+  width: 100%;
+
+  @include respond-to(tablet) {
+    padding: 2rem;
+    width: 100%;
+  }
+}
+
+.planetImageWrapper {
+  align-items: center;
+  display: flex;
+  height: 82px;
+  justify-content: center;
+  width: 82px;
+
+  @include respond-to(tablet) {
+    height: 148px;
+    width: 148px;
+  }
+}
+
+.planetName {
+  align-self: center;
+  font-family: base.$fontSpartan;
+  font-size: base.$font-size-small;
+  font-weight: base.$font-weight-bold;
+  height: min-content;
+  letter-spacing: base.$letter-spacing-normal;
+  text-align: center;
+
+  @include respond-to(tablet) {
+    font-size: base.$font-size-large;
+  }
+}

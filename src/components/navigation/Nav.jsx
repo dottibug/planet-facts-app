@@ -4,6 +4,7 @@ import { useMediaContext } from '../../context/useMediaContext';
 import { DESKTOP, LAPTOP, TABLET, MOBILE } from '../../context/mediaContext';
 import { planetColors } from '../../../data/planetColors';
 import { planetsArray } from '../../../data/planetsArray';
+import HomepageLink from './HomepageLink';
 
 export default function Nav() {
   const media = useMediaContext();
@@ -27,7 +28,7 @@ export default function Nav() {
 
   return (
     <nav className={styles.navBar}>
-      <h1 className="siteTitle">The Planets</h1>
+      <HomepageLink />
       <ul className={styles.navItems}>
         {planetsArray.map((planet) => (
           <NavLink

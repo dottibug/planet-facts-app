@@ -1,0 +1,16 @@
+@import '../sass/mixins';
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-bottom: 0;
+  margin-top: 4rem;
+
+  @include respond-to(tablet) {
+    gap: 8rem;
+    margin-bottom: 4rem;
+    margin-top: 8rem;
+    width: 100vw;
+  }
+}
