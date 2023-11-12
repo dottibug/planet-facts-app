@@ -1,8 +1,8 @@
 import styles from './MobileMenu.module.scss';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useMobileNavContext } from '../../../context/useMobileNavContext';
 import { planetsArray } from '../../../../data/planetsArray';
 import MobileMenuItem from './MobileMenuItem';
-import { useMobileNavContext } from '../../../context/useMobileNavContext';
 
 const menuVariants = {
   openNav: {

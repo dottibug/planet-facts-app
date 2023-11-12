@@ -1,15 +1,13 @@
 import styles from './PlanetOption.module.scss';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { getPlanetImageAlt } from '../planetImage/helpers/planetImageHelpers';
 import { useMediaContext } from '../../context/useMediaContext';
 import { MOBILE, TABLET } from '../../context/mediaContext';
+import { getPlanetImageAlt } from '../planetImage/helpers/planetImageHelpers';
 
 export default function PlanetOption({ planet }) {
   const media = useMediaContext();
   const [hoveredOption, setHoveredOption] = useState(null);
-
-  console.log('MEDIA: ', media);
 
   // HANDLERS
   const handleHoverOption = (e) => setHoveredOption(e.currentTarget.dataset.planetName);

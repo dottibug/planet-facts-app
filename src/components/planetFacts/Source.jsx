@@ -1,9 +1,6 @@
 import styles from './Source.module.scss';
-import { useMediaContext } from '../../context/useMediaContext';
 
 export default function Source({ planet, info }) {
-  const media = useMediaContext();
-
   const infoSource = () => {
     if (info === 'overview') return planet.overview.source;
     if (info === 'internal-structure') return planet.structure.source;

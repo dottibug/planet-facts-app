@@ -1,5 +1,5 @@
 import styles from './Homepage.module.scss';
-import PageTransition from '../pageTransition';
+import PageTransition from '../components/pageTransition/PageTransition';
 import HomepageHeader from '../components/homepage/HomepageHeader';
 import PlanetOptions from '../components/homepage/PlanetOptions';
 

@@ -1,16 +1,15 @@
 import styles from './PlanetImage.module.scss';
-import { useState, useEffect, useRef, useMemo, Suspense } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
+import { useParams } from 'react-router-dom';
+import { useMediaContext } from '../../context/useMediaContext';
+import { AnimatePresence, motion } from 'framer-motion';
 import OverviewImage from './OverviewImage';
 import InternalImage from './InternalImage';
-import { AnimatePresence, motion } from 'framer-motion';
 import {
   getPlanetImage,
   getPlanetImageAlt,
   getPlanetImageSize,
 } from './helpers/planetImageHelpers';
-import { useMediaContext } from '../../context/useMediaContext';
-import { useParams } from 'react-router-dom';
-import PageTransition from '../../pageTransition';
 
 // Animations
 const animations = {
@@ -28,9 +27,17 @@ const initial = (prevInfo) => {
   return { opacity: 1 };
 };
 
+/**
+ * @param {string} name - The name of the planet
+ * @param {Object} images - Object containing images of the planet for different info tabs
+ * @param {string} info - The current info tab of the planet ('overview', 'internal-structure', 'surface-geology')
+ */
 export default function PlanetImage({ name, images, info }) {
+  // Keeps track of the previous info tab
   const prevInfo = useRef();
+
   const [animationVariant, setAnimationVariant] = useState('noAnimation');
+
   const media = useMediaContext();
   const { planet } = useParams();
 

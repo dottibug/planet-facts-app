@@ -4,6 +4,7 @@ import { useGeologyImageAnimation } from './hooks/useGeologyImageAnimation';
 
 // Framer Motion animation variants
 const geologyImageVariants = {
+  defaultAnimation: {},
   showGeologyImage: {
     opacity: 1,
     transition: { delay: 0.1, duration: 0.2, ease: 'easeOut' },

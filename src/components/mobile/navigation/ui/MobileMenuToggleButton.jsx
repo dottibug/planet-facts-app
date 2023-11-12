@@ -1,7 +1,7 @@
 import styles from './MobileMenuToggleButton.module.scss';
 import { motion } from 'framer-motion';
-import ToggleButtonPaths from './ToggleButtonPaths';
 import { useMobileNavContext } from '../../../../context/useMobileNavContext';
+import ToggleButtonPaths from './ToggleButtonPaths';
 
 export default function MobileMenuToggleButton() {
   const { isMobileNavOpen, toggleMobileNav } = useMobileNavContext();

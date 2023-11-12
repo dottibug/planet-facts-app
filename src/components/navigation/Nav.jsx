@@ -1,7 +1,7 @@
 import styles from './Nav.module.scss';
 import { NavLink } from 'react-router-dom';
 import { useMediaContext } from '../../context/useMediaContext';
-import { DESKTOP, LAPTOP, TABLET, MOBILE } from '../../context/mediaContext';
+import { DESKTOP, LAPTOP } from '../../context/mediaContext';
 import { planetColors } from '../../../data/planetColors';
 import { planetsArray } from '../../../data/planetsArray';
 import HomepageLink from './HomepageLink';

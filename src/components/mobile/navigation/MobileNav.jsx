@@ -1,7 +1,7 @@
 import styles from './MobileNav.module.scss';
+import HomepageLink from '../../navigation/HomepageLink';
 import MobileMenuToggleButton from './ui/MobileMenuToggleButton';
 import MobileMenu from './MobileMenu';
-import HomepageLink from '../../navigation/HomepageLink';
 
 export default function MobileNav() {
   return (
