@@ -1,4 +1,9 @@
 import { useMemo } from 'react';
+import { SURFACE_GEOLOGY, OVERVIEW } from '../../../../data/infoSlugs';
+import {
+  SHOW_GEOLOGY_IMAGE,
+  DEFAULT_ANIMATION,
+} from '../animationVariants/geologyAnimationVariants';
 
 /**
  * Custom hook that manages the animation geology images based on the previous and current information states.
@@ -12,13 +17,13 @@ import { useMemo } from 'react';
  */
 export const useGeologyImageAnimation = (prevInfo, info) => {
   const initialGeologyOpacity = useMemo(() => {
-    if (prevInfo === 'surface-geology' && info === 'overview') return { opacity: 1 };
-    if (prevInfo === 'overview' && info === 'surface-geology') return { opacity: 0 };
+    if (prevInfo === SURFACE_GEOLOGY && info === OVERVIEW) return { opacity: 1 };
+    if (prevInfo === OVERVIEW && info === SURFACE_GEOLOGY) return { opacity: 0 };
   }, [prevInfo, info]);
 
   const animateGeologyImage = useMemo(() => {
-    if (prevInfo === 'overview' && info === 'surface-geology') return 'showGeologyImage';
-    return 'defaultAnimation';
+    if (prevInfo === OVERVIEW && info === SURFACE_GEOLOGY) return SHOW_GEOLOGY_IMAGE;
+    return DEFAULT_ANIMATION;
   }, [prevInfo, info]);
 
   return { initialGeologyOpacity, animateGeologyImage };

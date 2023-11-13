@@ -7,10 +7,8 @@ import MobileNav from '../components/mobile/navigation/MobileNav';
 import Nav from '../components/navigation/Nav';
 import OutletWrapper from './OutletWrapper';
 
-/**
- * Layout component.
- * Displays the mobile or desktop navigation based on media context.
- */
+// Layout component.
+// Displays the mobile or desktop navigation based on media context.
 export default function Layout() {
   const media = useMediaContext();
   const { isMobileNavOpen } = useMobileNavContext();

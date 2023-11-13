@@ -1,31 +1,22 @@
 import styles from './PlanetImage.module.scss';
-import { useState, useEffect, useRef, useMemo } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useRef, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { useMediaContext } from '../../context/useMediaContext';
-import { AnimatePresence, motion } from 'framer-motion';
-import OverviewImage from './OverviewImage';
-import InternalImage from './InternalImage';
 import {
   getPlanetImage,
   getPlanetImageAlt,
   getPlanetImageSize,
 } from './helpers/planetImageHelpers';
-
-// Animations
-const animations = {
-  noAnimation: {},
-  imageAnimation: {
-    opacity: 1,
-    transition: { duration: 0.2, ease: 'easeOut' },
-  },
-  exit: { opacity: 0, transition: { duration: 0.2, ease: 'easeIn' } },
-};
-
-// Initial animation settings
-const initial = (prevInfo) => {
-  if (prevInfo === 'internal-structure') return { opacity: 0 };
-  return { opacity: 1 };
-};
+import { usePlanetImageAnimation } from './hooks/usePlanetImageAnimation';
+import {
+  planetImageAnimationVariants,
+  EXIT,
+} from './animationVariants/planetImageAnimationVariants';
+import { getInitialSettings } from './helpers/getInitialSettings';
+import { INTERNAL_STRUCTURE } from '../../../data/infoSlugs';
+import OverviewImage from './OverviewImage';
+import InternalImage from './InternalImage';
 
 /**
  * @param {string} name - The name of the planet
@@ -35,46 +26,27 @@ const initial = (prevInfo) => {
 export default function PlanetImage({ name, images, info }) {
   // Keeps track of the previous info tab
   const prevInfo = useRef();
-
-  const [animationVariant, setAnimationVariant] = useState('noAnimation');
-
-  const media = useMediaContext();
   const { planet } = useParams();
 
-  // Set animation variant when info changes
-  useEffect(() => {
-    if (prevInfo.current !== info) {
-      const prev = prevInfo.current;
-      prevInfo.current = info;
-
-      const isTransitionToOrFromInternal =
-        (prev === 'internal-structure' &&
-          (info === 'overview' || info === 'surface-geology')) ||
-        ((prev === 'overview' || prev === 'surface-geology') &&
-          info === 'internal-structure');
-
-      setAnimationVariant(
-        isTransitionToOrFromInternal ? 'imageAnimation' : 'noAnimation'
-      );
-    }
-  }, [info]);
+  const media = useMediaContext();
+  const planetImageAnimation = usePlanetImageAnimation(info, prevInfo);
 
   const imageSrc = getPlanetImage(info, images);
   const imageAlt = getPlanetImageAlt(name, info);
   const imageSize = useMemo(() => getPlanetImageSize(media, planet), [media, planet]);
 
   const ImageComponent = useMemo(() => {
-    return info === 'internal-structure' ? InternalImage : OverviewImage;
+    return info === INTERNAL_STRUCTURE ? InternalImage : OverviewImage;
   }, [info]);
 
   return (
     <AnimatePresence mode="popLayout">
       <motion.div
         key={info}
-        variants={animations}
-        initial={initial(prevInfo.current)}
-        animate={animationVariant}
-        exit="exit"
+        variants={planetImageAnimationVariants}
+        initial={getInitialSettings(prevInfo.current)}
+        animate={planetImageAnimation}
+        exit={EXIT}
         className={styles.planetImageWrapper}>
         <ImageComponent
           info={info}

@@ -1,19 +1,8 @@
 import styles from './SurfaceGeologyImage.module.scss';
 import { motion } from 'framer-motion';
 import { useGeologyImageAnimation } from './hooks/useGeologyImageAnimation';
-
-// Framer Motion animation variants
-const geologyImageVariants = {
-  defaultAnimation: {},
-  showGeologyImage: {
-    opacity: 1,
-    transition: { delay: 0.1, duration: 0.2, ease: 'easeOut' },
-  },
-  exit: {
-    opacity: 0,
-    transition: { duration: 0.1, ease: 'easeOut' },
-  },
-};
+import { SURFACE_GEOLOGY } from '../../../data/infoSlugs';
+import { geologyImageVariants, EXIT } from './animationVariants/geologyAnimationVariants';
 
 export default function SurfaceGeologyImage({ info, images, name, prevInfo }) {
   const { initialGeologyOpacity, animateGeologyImage } = useGeologyImageAnimation(
@@ -23,13 +12,13 @@ export default function SurfaceGeologyImage({ info, images, name, prevInfo }) {
 
   return (
     <>
-      {info === 'surface-geology' && (
+      {info === SURFACE_GEOLOGY && (
         <motion.img
           key="geology"
           variants={geologyImageVariants}
           initial={initialGeologyOpacity}
           animate={animateGeologyImage}
-          exit="exit"
+          exit={EXIT}
           className={styles.surface}
           src={images.geology}
           alt={`Closeup of the surface of ${name}`}

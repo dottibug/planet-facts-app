@@ -1,0 +1,53 @@
+@use '../base.scss' as base;
+@import '../sass/mixins';
+
+.errorPage {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  height: 100vh;
+  margin-top: 20%;
+  padding: 0 10%;
+
+  @include respond-to(laptop) {
+    margin-top: 10%;
+  }
+}
+
+.errorHeading {
+  font-family: base.$fontAntonio;
+  font-size: base.$font-size-medium;
+  font-style: normal;
+  font-weight: base.$font-weight-normal;
+  line-height: base.$line-height-large;
+  text-align: center;
+  text-transform: none;
+
+  @include respond-to(tablet) {
+    font-size: base.$font-size-large;
+  }
+
+  @include respond-to(laptop) {
+    font-size: base.$font-size-xlarge;
+  }
+}
+
+.errorMessage {
+  text-align: center;
+}
+
+.errorSpan {
+  font-size: base.$font-size-medium;
+  opacity: 0.5;
+
+  @include respond-to(laptop) {
+    font-size: base.$font-size-large;
+  }
+}
+
+.homeLink {
+  color: aquamarine;
+  font-size: base.$font-size-small;
+  text-decoration: none;
+}

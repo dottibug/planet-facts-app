@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 import MediaProvider from './context/mediaContext';
 import MobileNavProvider from './context/mobileNavContext';
-import { appRouter } from './appRouter';
+import { appRouter } from './appRouter/appRouter';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

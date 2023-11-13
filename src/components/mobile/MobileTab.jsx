@@ -1,13 +1,15 @@
 import styles from './MobileTab.module.scss';
 import { useParams, NavLink } from 'react-router-dom';
 import { planetColors } from '../../../data/planetColors';
+import { OVERVIEW } from '../../../data/infoSlugs';
 
 export default function MobileTab({ tab }) {
   const { planet } = useParams();
   const tabSlug = tab.toLowerCase().split(' ').join('-');
   const tabName = tab.split(' ')[0];
 
-  //   isActive comes from React Router NavLink component, which gives us the state of the link (active, pending, etc)
+  // isActive comes from React Router NavLink component
+  // Gives us the state of the link (active, pending, etc)
   const tabClasses = (isActive) =>
     isActive ? `${styles.tab} ${styles.active}` : styles.tab;
 
@@ -19,7 +21,7 @@ export default function MobileTab({ tab }) {
   return (
     <div className={styles.tabWrapper}>
       <NavLink
-        to={tabSlug === 'overview' ? `/${planet}` : tabSlug}
+        to={tabSlug === OVERVIEW ? `/${planet}` : tabSlug}
         className={({ isActive }) => tabClasses(isActive)}
         style={({ isActive }) => tabStyle(isActive)}
         end>

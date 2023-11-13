@@ -1,10 +1,11 @@
 import styles from './Source.module.scss';
+import { OVERVIEW, INTERNAL_STRUCTURE, SURFACE_GEOLOGY } from '../../../data/infoSlugs';
 
 export default function Source({ planet, info }) {
   const infoSource = () => {
-    if (info === 'overview') return planet.overview.source;
-    if (info === 'internal-structure') return planet.structure.source;
-    if (info === 'surface-geology') return planet.geology.source;
+    if (info === OVERVIEW) return planet.overview.source;
+    if (info === INTERNAL_STRUCTURE) return planet.structure.source;
+    if (info === SURFACE_GEOLOGY) return planet.geology.source;
   };
 
   return (

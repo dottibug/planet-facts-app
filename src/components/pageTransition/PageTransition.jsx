@@ -1,18 +1,10 @@
 import { motion } from 'framer-motion';
 import { useParams } from 'react-router-dom';
-
-// Animation states for the page transition
-const pageVariants = {
-  initial: {
-    opacity: 0,
-    filter: 'blur(1.5px)',
-  },
-  pageVisible: {
-    opacity: 1,
-    transition: { delay: 0.2, duration: 0.2, ease: 'easeOut' },
-    filter: 'blur(0px)',
-  },
-};
+import {
+  pageTransitionAnimationVariants,
+  INITIAL,
+  PAGE_VISIBLE,
+} from './pageTransitionAnimationVariants';
 
 /**
  * Provides a transition effect when a page is loaded.
@@ -26,9 +18,9 @@ export default function PageTransition({ children }) {
   return (
     <motion.div
       key={planet ? `${planet}-transition` : `transition`}
-      variants={pageVariants}
-      initial="initial"
-      animate="pageVisible">
+      variants={pageTransitionAnimationVariants}
+      initial={INITIAL}
+      animate={PAGE_VISIBLE}>
       {children}
     </motion.div>
   );

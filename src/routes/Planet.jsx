@@ -7,12 +7,14 @@ import PlanetImage from '../components/planetImage/PlanetImage';
 import PlanetFacts from '../components/planetFacts/PlanetFacts';
 import PlanetStats from '../components/planetStats/PlanetStats';
 import PageTransition from '../components/pageTransition/PageTransition';
+import { getPlanetInfo } from '../helpers/getPlanetInfo';
 
 // Displays information about a specific planet
-// This component does not accept any props. The planet data is fetched internally using the useLoaderData hook. The type of information to display is determined by the info parameter in the URL.
+// The type of information to display is determined by the info parameter in the URL.
 export default function Planet() {
-  // The type of info to display about the planet ('overview', 'internal-structure', 'surface-geology'). Defaults to 'overview'.
-  const info = useParams().info || 'overview';
+  const params = useParams();
+  const info = getPlanetInfo(params);
+
   const media = useMediaContext();
   const currentPlanet = useLoaderData();
 

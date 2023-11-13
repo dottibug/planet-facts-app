@@ -9,11 +9,9 @@ export default function PlanetFacts({ planet, info }) {
 
   return (
     <div className={styles.planetFacts}>
-      {/* TABLET && MOBILE */}
       {(media === TABLET || media === MOBILE) && (
         <PlanetFactsMobileTablet planet={planet} info={info} />
       )}
-      {/* LAPTOP & DESKTOP */}
       {(media === LAPTOP || media === DESKTOP) && (
         <PlanetFactsLaptopDesktop planet={planet} info={info} />
       )}

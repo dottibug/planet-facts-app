@@ -1,5 +1,5 @@
 import styles from './PlanetOptions.module.scss';
-import { planetData } from '../../../data/data';
+import { planetData } from '../../../data/planetData';
 import PlanetOption from './PlanetOption';
 
 export default function PlanetOptions() {
