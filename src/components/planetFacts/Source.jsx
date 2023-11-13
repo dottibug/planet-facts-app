@@ -13,7 +13,7 @@ export default function Source({ planet, info }) {
       <p className="body">{`Source:  `}</p>
       <a href={infoSource()} className={`body ${styles.link}`}>
         <p>Wikipedia</p>
-        <img className={styles.linkIcon} src="/assets/icon-source.svg" alt="test" />
+        <img className={styles.linkIcon} src="/icon-source.svg" alt="test" />
       </a>
     </div>
   );
