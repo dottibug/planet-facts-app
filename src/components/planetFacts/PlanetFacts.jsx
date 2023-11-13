@@ -8,13 +8,13 @@ export default function PlanetFacts({ planet, info }) {
   const media = useMediaContext();
 
   return (
-    <div className={styles.planetFacts}>
+    <section className={styles.planetFacts}>
       {(media === TABLET || media === MOBILE) && (
         <PlanetFactsMobileTablet planet={planet} info={info} />
       )}
       {(media === LAPTOP || media === DESKTOP) && (
         <PlanetFactsLaptopDesktop planet={planet} info={info} />
       )}
-    </div>
+    </section>
   );
 }
