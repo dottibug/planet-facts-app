@@ -25,7 +25,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Planet Facts App](https://main--planet-facts-dottibug.netlify.app/)
+- Live Site URL: [Planet Facts App](https://planet-facts-dottibug.netlify.app)
 
 ## My Process
 
