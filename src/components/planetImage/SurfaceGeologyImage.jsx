@@ -4,7 +4,7 @@ import { useGeologyImageAnimation } from './hooks/useGeologyImageAnimation';
 import { SURFACE_GEOLOGY } from '../../../data/infoSlugs';
 import { geologyImageVariants, EXIT } from './animationVariants/geologyAnimationVariants';
 
-export default function SurfaceGeologyImage({ info, images, name, prevInfo }) {
+export default function SurfaceGeologyImage({ info, geologyImage, name, prevInfo }) {
   const { initialGeologyOpacity, animateGeologyImage } = useGeologyImageAnimation(
     prevInfo,
     info
@@ -20,7 +20,7 @@ export default function SurfaceGeologyImage({ info, images, name, prevInfo }) {
           animate={animateGeologyImage}
           exit={EXIT}
           className={styles.surface}
-          src={images.geology}
+          src={geologyImage}
           alt={`Closeup of the surface of ${name}`}
         />
       )}

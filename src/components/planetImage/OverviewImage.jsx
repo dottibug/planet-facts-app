@@ -18,7 +18,12 @@ export default function OverviewImage({
         alt={imageAlt}
         style={imageSize}
       />
-      <SurfaceGeologyImage info={info} images={images} name={name} prevInfo={prevInfo} />
+      <SurfaceGeologyImage
+        info={info}
+        geologyImage={images.geology}
+        name={name}
+        prevInfo={prevInfo}
+      />
     </>
   );
 }
