@@ -11,7 +11,11 @@ export default function Source({ planet, info }) {
   return (
     <div className={styles.source}>
       <p className="body">{`Source:  `}</p>
-      <a href={infoSource()} className={`body ${styles.link}`}>
+      <a
+        href={infoSource()}
+        target="_blank"
+        rel="noreferrer"
+        className={`body ${styles.link}`}>
         <p>Wikipedia</p>
         <img className={styles.linkIcon} src="/icon-source.svg" alt="test" />
       </a>

@@ -32,7 +32,6 @@ export default function PlanetImage({ name, images, info }) {
   const planetImageAnimation = usePlanetImageAnimation(info, prevInfo);
 
   const imageSrc = getPlanetImage(info, images);
-  console.log('image source: ', imageSrc);
   const imageAlt = getPlanetImageAlt(name, info);
   const imageSize = useMemo(() => getPlanetImageSize(media, planet), [media, planet]);
 
