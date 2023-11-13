@@ -1,7 +1,5 @@
 # Frontend Mentor - Planet Facts App
 
-![Design preview for the Planets fact site coding challenge](./preview.jpg)
-
 This application was built for the [Planets fact site challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/planets-fact-site-gazqN8w_f).
 
 ## Table of contents
