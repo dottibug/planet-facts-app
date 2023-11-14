@@ -35,10 +35,6 @@ export default function PlanetImage({ name, images, info }) {
   const imageAlt = getPlanetImageAlt(name, info);
   const imageSize = useMemo(() => getPlanetImageSize(media, planet), [media, planet]);
 
-  const ImageComponent = useMemo(() => {
-    return info === INTERNAL_STRUCTURE ? InternalImage : OverviewImage;
-  }, [info]);
-
   return (
     <AnimatePresence mode="popLayout">
       <motion.div
@@ -48,15 +44,27 @@ export default function PlanetImage({ name, images, info }) {
         animate={planetImageAnimation}
         exit={EXIT}
         className={styles.planetImageWrapper}>
-        <ImageComponent
-          info={info}
-          prevInfo={prevInfo.current}
-          images={images}
-          name={name}
-          imageSrc={imageSrc}
-          imageAlt={imageAlt}
-          imageSize={imageSize}
-        />
+        {info === INTERNAL_STRUCTURE ? (
+          <InternalImage
+            info={info}
+            prevInfo={prevInfo.current}
+            images={images}
+            name={name}
+            imageSrc={imageSrc}
+            imageAlt={imageAlt}
+            imageSize={imageSize}
+          />
+        ) : (
+          <OverviewImage
+            info={info}
+            prevInfo={prevInfo.current}
+            images={images}
+            name={name}
+            imageSrc={imageSrc}
+            imageAlt={imageAlt}
+            imageSize={imageSize}
+          />
+        )}
       </motion.div>
     </AnimatePresence>
   );
