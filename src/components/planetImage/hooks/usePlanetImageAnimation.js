@@ -14,15 +14,16 @@ export const usePlanetImageAnimation = (info, prevInfo) => {
 
   useEffect(() => {
     if (prevInfo.current !== info) {
-      const prev = prevInfo.current;
-      prevInfo.current = info;
-
       const isTransitionToOrFromInternal =
-        (prev === INTERNAL_STRUCTURE &&
+        (prevInfo.current === INTERNAL_STRUCTURE &&
           (info === OVERVIEW || info === SURFACE_GEOLOGY)) ||
-        ((prev === OVERVIEW || prev === SURFACE_GEOLOGY) && info === INTERNAL_STRUCTURE);
+        ((prevInfo.current === OVERVIEW || prevInfo.current === SURFACE_GEOLOGY) &&
+          info === INTERNAL_STRUCTURE);
 
       setAnimationVariant(isTransitionToOrFromInternal ? IMAGE_ANIMATION : NO_ANIMATION);
+
+      // Set new prevInfo value
+      prevInfo.current = info;
     }
   }, [info, prevInfo]);
 
