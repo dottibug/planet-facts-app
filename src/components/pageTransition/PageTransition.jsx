@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import {
   pageTransitionAnimationVariants,
   INITIAL,
@@ -14,6 +15,12 @@ import {
  */
 export default function PageTransition({ children }) {
   const { planet } = useParams();
+  const { pathname } = useLocation();
+
+  // Scroll to top when pathname changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <motion.div
