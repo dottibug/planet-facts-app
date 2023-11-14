@@ -31,13 +31,14 @@ export default function Nav() {
       <HomepageLink />
       <ul className={styles.navItems}>
         {planetsArray.map((planet) => (
-          <NavLink
-            to={`/${planet}`}
-            className={styles.navItem}
-            style={({ isActive }) => navItemStyle(isActive, planet)}
-            key={planet}>
-            {planet}
-          </NavLink>
+          <li className={styles.navListItem} key={planet}>
+            <NavLink
+              to={`/${planet}`}
+              className={styles.navItem}
+              style={({ isActive }) => navItemStyle(isActive, planet)}>
+              {planet}
+            </NavLink>
+          </li>
         ))}
       </ul>
     </nav>
