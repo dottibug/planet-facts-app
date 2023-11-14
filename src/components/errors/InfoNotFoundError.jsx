@@ -12,7 +12,7 @@ export default function InfoNotFoundError() {
   return (
     <p className={styles.errorMessage}>
       <span className={`body ${styles.errorSpan}`}>{CHECK_OUT}</span>
-      <NavLink to={`/${planet}/overview`} className={`headingThree ${styles.homeLink}`}>
+      <NavLink to={`/${planet}`} className={`headingThree ${styles.homeLink}`}>
         {`${planetFormatted} overview`}
       </NavLink>
       <span className={`body ${styles.errorSpan}`}>{PAGE}</span>
