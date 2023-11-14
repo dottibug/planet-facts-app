@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
+import { useMediaContext } from '../../context/useMediaContext.js';
+import { MOBILE } from '../../context/mediaContext';
 import {
   pageTransitionAnimationVariants,
   INITIAL,
@@ -15,12 +17,13 @@ import {
  */
 export default function PageTransition({ children }) {
   const { planet } = useParams();
-  const { pathname } = useLocation();
+  const media = useMediaContext();
 
-  // Scroll to top when pathname changes
+  // Scroll to top when planet param changes on mobile
   useEffect(() => {
+    if (media !== MOBILE) return;
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [planet, media]);
 
   return (
     <motion.div
